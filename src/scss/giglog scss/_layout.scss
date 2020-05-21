@@ -1,0 +1,93 @@
+html {
+	width: 100%; /* DNU vw on html or body */
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100%; /* DNU vw on html or body */
+	font-size: 100%;
+   font-family: $font1;
+   color: $body-copy1;
+   font-weight: 300;
+   letter-spacing: $space/10;
+   line-height: $lineheight;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+	display: flex;
+	max-width: 1200px;
+	height: 100vh;
+	margin: auto;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	font-size: 1.11rem;
+}
+
+
+/*
+   <body>
+	- <app>
+	- - <header>
+	- - <main> [ div.main ]
+	- - - <div.container [view/component]>
+	- - <footer>
+*/
+
+header {
+	display: flex;
+	// order: 0;
+   position: fixed;
+   top: 0;
+	width: 100%;
+	max-width: 1200px;
+   height: 10.5rem; // TBD re; responsiveness; see .main margin-top
+	height: auto;
+	margin-bottom: .9rem;
+	// padding: 1.5rem 3rem 3rem 0;
+	// padding: 1.5rem .9rem 3rem;
+	padding: 1.5rem 3rem;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	background: $w;
+   z-index: 999;
+	.subhead {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		margin: 1.5rem 0;
+	}
+	border-bottom: 1px dotted #ccc;
+}
+
+.main {
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: 100%;
+	position: relative;
+	margin-top: calc(12rem + 0px); //  TBD re; responsiveness, per Header height
+	padding: 3rem;
+}
+@media all and (min-width: 900px) {
+	.main {
+	}
+}
+
+.footer {
+	display: flex;
+	min-height: 6rem;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+	margin-top: auto;
+	padding: 1.5rem .9rem;
+	background: $theme1;
+   color: #fff;
+}
+
+.footer .debug { width: 100%; }

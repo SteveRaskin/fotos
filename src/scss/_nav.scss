@@ -1,0 +1,24 @@
+#nav		{ text-align: center; margin-bottom: .3rem; }
+#nav ul	{ display: none; list-style: none; }
+
+#nav li	{ margin-bottom: 1px; }
+/* #email-link-1 visible to mobile & tablet (not hidden by default); #email-link-2 hidden by default, un-hidden to desktop */
+#nav #email-link-2	{ display: none; }
+
+#nav a,
+#nav li a	{
+	display: block;
+	font-size: .9rem;
+	line-height: 2.1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #c90;
+	background: #999;
+	color: #fff;
+	}
+
+/* #nav a includes a#menu-trigger */
+#menu-trigger	{ border-radius: 6px; }
+
+#nav li:first-child a	{ border-radius: 6px 6px 0 0; }
+#nav li:last-child a		{ border-radius: 0 0 6px 6px; }

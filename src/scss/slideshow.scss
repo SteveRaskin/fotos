@@ -1,0 +1,57 @@
+/* ======================== SLIDESHOW CONTROLS 1: ARROWS ======================== */
+#nav-wrap p					{ margin-bottom: 15px; color: #999; font-size: 14px; line-height: 1.5em; font-style: italic; text-align: center; border-bottom: 3px double #666; }
+#nav-wrap p strong	{ color: #000; }
+
+/* ======================== SLIDESHOW CONTROLS 2: SLIDE SELECTOR [THUMBNAILS] ======================== */
+/* ========= (hidden from phone.portrait/landscape, tablet.portrait/landscape ) ========= */
+// .thumbnails			{ clear: both; float: left; background: #fff; border: 0px solid lime; }
+// .thumbnails:after	{ content: ""; display: table; clear: both; }
+
+// .thumbnails li	{
+// 	display: inline-block;
+// 	// float: left;
+// 	width: 45px;
+// 	height: 45px; /*!!!*/
+// 	// margin: 0 15px 6px 0;
+// 	padding: 0 3px;
+// 	text-align: center;
+// 	// border: 1px dotted #fff;
+// 	border-radius: 15%;
+// 	background: #fff;
+// 	}
+// .thumbnails li a			{ display: block; outline: none; color: #666; opacity: .66; }
+// .thumbnails li:hover	{ border: 3px double #f00; border: 1px solid #fff; }
+// .thumbnails li a:hover	{ opacity: 1.0; }
+// .thumbnails li img		{ width: 45px; height: 45px; /*!!!*/border-radius: 30px; border-radius: 6%; background: #fff; }
+// .lt-ie9 .thumbnails img	{ width: 45px; height: 45px; }
+// .thumbnails li.selected	{ /*margin-top: -3px; border: 3px solid #666; */ border: 3px solid #5ba1ff; border: 3px solid #fff; border: 1px dotted #000; }
+// .thumbnails li.selected a	{ color: #000; opacity: 1; }
+// .thumbnails li a span	{ font-weight: bold; }
+
+/* ======================== SLIDES ======================== */
+// .slides	{
+// 	/*clear: both;*/
+// 	display: block;
+// 	/*
+// 	min-height: 300px;
+// 	min-height: 600px;/* this is a guess; for jitter prevention you'd want to confirm the height of the tallest image for this value */
+// 	/*min-width: 300px;*/
+// 	position: relative;
+// 	overflow: hidden;
+// 	background: transparent url(/images/slideshow_images/loading_fffon000.gif) 150px 120px no-repeat;
+// 	margin: auto;
+// 	}
+// /*.slides:after	{ content: ""; display: table; clear: both; }*/
+//
+// .slides .slide	{ clear: both; display: none; background: transparent; }
+// /*.lt-ie9 .slides .slide img	{ position: absolute; top: 0; display: none; border: 2px solid yellow; }*/
+// .slides .slide.selected	{ /*float: left;*/ display: block; }
+//
+// .slide .img-meta			{ /*display: block;*/ /*float: left; margin-bottom: 6px; line-height: 30px; font-family: apple-chancery; border: 1px dotted #000; */}
+// .slide .img-meta:after	{ content: ""; display: table; clear: both; }
+//
+// .slide .counter	{ /*float: right; margin-left: 15px; font-size: 11px; color: #999; */}
+// .slide .caption	{ /*float: right; font-size: .9em; color: #666; font-style: italic; */}
+//
+// .slides .slide img	{ clear: both; display: block; -ms-interpolation-mode: bicubic; /*re: scaling*/}
+// .slides .slide.selected img	{ }

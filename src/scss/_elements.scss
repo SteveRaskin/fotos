@@ -1,0 +1,124 @@
+/*
+
+??? convention, but makes sense only (?) for ViewXYZ components (e.g., TheSubheader.vue doesn't have a .container YET; should it? should they all?):
+
+<template>
+	<div class="container container-[view]">
+
+		<section class="section-[view]">
+*/
+
+*,
+*:before,
+*:after { box-sizing: inherit; margin: 0; padding: 0; font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: normal; line-height: 1.11; }
+
+.hx-wrapper {
+	width: 100%;
+	width: calc(100% + 1.5rem);
+	margin-bottom: 1.8rem;
+	border-bottom: 3px double floralwhite;
+}
+h1 .collections-link,
+h1 .view-title {
+	display: inline-flex;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: floralwhite;
+	// border: 1px solid red;
+}
+h1 .collections-link {
+	cursor: pointer;
+}
+h1 .view-title {
+	text-transform: capitalize;
+	// border: 1px solid blue;
+}
+h1 .view-title::before {
+	display: inline-block;
+	padding: 0 .9rem;
+	// content: "|";
+	content: ">";
+	color: darken(gainsboro, 45%);
+}
+
+
+// .main h2 {
+// 	display: inline-flex;
+// 	padding-bottom: .6rem;
+// 	font-size: 1.8rem;
+// 	color: floralwhite;
+// }
+
+
+
+a {
+	text-decoration: none;
+	color: $theme1;
+}
+a:hover,
+a:active {
+	// border-bottom: 1px solid $theme1;
+}
+
+// a:active,
+// a:focus { outline: 3px double #ccc; }
+
+// wow, cool skeleton effect!
+a:active,
+a:focus {
+	outline: 3px double #ccc;
+}
+
+.main p {
+	font-size: 1.35rem;
+}
+
+
+ul { list-style: none; }
+
+.main ul {
+	font-size: 1.2rem;
+}
+
+img { max-width: 100%; height: auto; }
+
+
+.errors {
+	width: 100%;
+	margin-bottom: .9rem;
+	padding: .9rem;
+	color: $error;
+	border: 1px solid $error;
+	border-radius: .3rem;
+}
+.error {
+	color: $error;
+}
+
+
+.strongest	{ font-weight: bold; color: #000; }
+.stronger	{ font-weight: bold; color: #666; font-style: italic; }
+
+
+.container	{
+	display: flex;
+	width: 100%; // TB var'd, re; header padding-left
+	flex-flow: column nowrap;
+	// justify-content: space-between;
+	border: 0px dotted #333;
+}
+
+section {
+	display: flex;
+	width: 100%;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	margin-bottom: 3rem;
+}

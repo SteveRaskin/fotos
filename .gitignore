@@ -19,3 +19,32 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+archive/
+archive/*
+_archive/
+_archive/*
+_dnu*
+_private*
+
+
+# ignores both ...ORIG.js & ... ORIG.js (2-char file extension)
+*ORIG.[a-z][a-z]
+
+# ignores both ...ORIG.vue & ... ORIG.vue (3-char file extension)
+*ORIG.[a-z][a-z][a-z]
+
+# ignores both ...ORIG.html & ... ORIG.html (4-char file extension)
+*ORIG.[a-z][a-z][a-z][a-z]
+
+
+src/router/firebase.web.setup.API.info.html
+src/router/firebaseConfig.js
+
+# from https://github.com/github/gitignore/blob/master/Sass.gitignore ... does it work?
+# see also https://gist.github.com/mynameispj/10143204
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

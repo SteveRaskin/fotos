@@ -1,4 +1,4 @@
-# foodstylist
+# fotos
 
 ## Project setup
 ```

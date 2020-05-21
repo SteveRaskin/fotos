@@ -1,0 +1,84 @@
+
+// BREAK POINTS
+$small: 600px;
+$device: 768px;
+$tablet: 1024px;
+$large: 1500px;
+
+
+// UNITS
+$space: .3rem;
+
+$w: #fff;
+$b: #000;
+$tr: transparent;
+$color1: rgb(18, 72, 255);
+$accent: ajdust-hue($color1, 15deg);
+
+$save: rgb(255, 69, 0); // orangered
+$cancel: #000;
+$error: red;
+
+
+// TYPOGRAPHY
+$font1: "Avenir", Helvetica, Arial, 'sans-serif'; // prefer for <Hx>, body
+$font2: "Abel", Helvetica, Arial, 'sans-serif'; // prefer for numbers; maybe also captions?
+
+$font3: "Courier", Helvetica, Arial, 'sans-serif'; // yup
+
+
+
+$body-copy1: #222;
+$body-copy2: #444;
+$link-color: rgb(18, 72, 255);
+// $basesize: 16px;
+$lineheight: 1.65;
+
+
+
+$max-width: 1200px;
+
+/*
+	COLORS
+	======
+
+	.all-projects/(.home?) = global
+
+	// reds, darkest -> lightest:
+		maroon: rgb(128, 0, 0);
+		darkred: rgb(139, 0, 0);
+		firebrick: rgb(178, 34, 34);
+		crimson: rgb(220, 20, 60);
+		orange: rgb(255, 165, 0);
+
+	// greens, darkest -> lightest:
+		lightseagreen: rgb(32, 178, 170); // blue-green, fits with theme & edit
+		green: rgb(0, 128, 0);
+		forestgreen: rgb(34, 139, 34); (slightly lighter)
+
+		midnightblue: rgb(25, 25, 112);
+*/
+
+
+// $theme1 = TBD
+// $theme2 = TBD
+// $theme3 = TBD
+// $theme4 = TBD
+// $theme5 = TBD
+// $theme6 = TBD
+// color: #42b983; // vue grn
+$vue-a: #42b983;
+
+
+$theme1: rgb(18, 72, 255);
+$theme2: rgb(30, 144, 255);
+$theme3: rgb(32, 178, 170);
+$theme4: rgb(15, 150, 15);
+// $theme5: rgb(210, 90, 90);
+$theme5: rgb(255, 69, 0);
+$theme6: rgb(210, 15, 15);
+
+
+
+
+//

@@ -1,0 +1,167 @@
+/*
+
+??? convention, but makes sense only (?) for ViewXYZ components (e.g., TheSubheader.vue doesn't have a .container YET; should it? should they all?):
+
+<template>
+	<div class="container container-[view]">
+
+		<section class="section-[view]">
+*/
+
+*,
+*:before,
+*:after { box-sizing: inherit; margin: 0; padding: 0; font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: normal; line-height: 1.11; }
+
+h1 {
+	font-size: 1.5rem;
+	color: $theme1;
+	text-transform: uppercase;
+}
+h1 span {
+	font-size: .99rem;
+	text-transform: none;
+}
+
+
+a {
+	text-decoration: none;
+	color: $theme1;
+	border-bottom: 1px dotted $theme1;
+}
+a:hover,
+a:active {
+	border-bottom: 1px solid $theme1;
+}
+
+ul { list-style: none; }
+
+img { max-width: 100%; height: auto; }
+
+.errors {
+	width: 100%;
+	margin-bottom: .9rem;
+	padding: .9rem;
+	color: $error;
+	border: 1px solid $error;
+	border-radius: .3rem;
+}
+.error {
+	color: $error;
+}
+
+
+.contacts li { margin-bottom: 1.5rem; }
+
+.done { border: 1px solid red !important; }
+
+.strongest	{ font-weight: bold; color: #000; }
+.stronger	{ font-weight: bold; color: #666; font-style: italic; }
+
+
+
+/* from project-add.vue */
+
+.preview .contacts li   { padding: 0 0 .9rem .9rem; margin-bottom: .9rem; border-bottom: 11px dotted #c00; }
+
+h5 {
+	display: inline-flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: .9rem;
+}
+.done { border: 1px solid red !important; }
+
+//
+
+.container	{
+	display: flex;
+	// max-width: 78%; // TB var'd, re; header padding-left
+	margin: 0 auto 3rem; // DNU top margin re; collapse w/.main
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+section {
+	display: flex;
+	width: 100%;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	margin-bottom: 3rem;
+}
+
+section.card {
+
+}
+
+// ======================================================================================
+
+dl {
+	display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+dt {
+	width: 100%;
+	margin-bottom: .3rem;
+	color: #000;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+dd {
+	width: 100%;
+	// margin-bottom: 1.5rem;
+}
+dd:last-of-type { margin-bottom: 0; }
+
+// nested def dl
+dd dl {}
+dd dt {
+	width: 7.5rem;
+	color: lighten($b, 30%);
+	font-weight: normal;
+	text-align: left;
+	text-transform: capitalize;
+}
+dd dd {
+	width: calc(100% - 7.5rem);
+	font-weight: bold;
+}
+dd dd:not(:last-child) { margin-bottom: .9rem; }
+
+
+// dl + .buttons { display: inline-block; margin-top: 0; }
+
+
+// Detail, Edit
+.client { font-weight: bold; text-transform: capitalize; }
+.container-project-detail .client,
+.container-project-edit .client { color: $theme1; }
+
+.street-address { text-transform: capitalize; }
+.city {
+	margin-right: .6rem;
+	text-transform: capitalize;
+}
+.state {
+	margin-right: .6rem;
+	text-transform: uppercase;
+}
+
+// ul.contacts > li.contact
+.contact-name {
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.contact-title {
+	text-transform: uppercase;
+}

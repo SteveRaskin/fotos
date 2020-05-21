@@ -1,0 +1,43 @@
+excised from family_2011.04
+
+	{
+		"imgFile": "IMG_1969_lisa_patty.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+
+	{
+		"imgFile": "IMG_2030_jeff_dad.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2044_pw_ian.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2051_shelley_dad.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2053_shelley_ian_dad.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2054_pw_shelley_ian.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2072_pw_ian_irene.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
+	{
+		"imgFile": "IMG_2077_fritata.jpg",
+		"metadata": "Noah's Bar Mitzvah, Ottawa, April 2011",
+		"tags": [ "Mom", "Dad", "Lee", "Roz", "Noah", "Bar Mitzvah", "Ottawa", "Ontario", "April", "2011" ]
+	},
