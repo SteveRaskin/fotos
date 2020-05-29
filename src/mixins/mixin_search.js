@@ -2,13 +2,17 @@ export default {
 	created: function() {},
 	methods: {
 		doSearch: function(term) {
-			console.log("doSearch, term", term);
-			let searchResults = [];
-			let searchResult = {};
 			const searchTerm = term.toLowerCase();
-			// props: this.collectionList, this.collectionFiles
+			this.$store.commit("setSearchTerm", term);
+
+			let searchResults = [];
+
+			this.collectionList = this.$store.state.collectionList;
+			this.collectionFiles = this.$store.state.collectionFiles;
+
 			this.collectionFiles.forEach((collectionFile, i) => {
 				collectionFile.filter((imgObj) => {
+					let searchResult = {}; // TODO: REMEMBER THIS, PRESERVE YOUR SANITY: *WITHIN* THE ITERATION
 					if (imgObj.tags.indexOf(searchTerm) !== -1) {
 						searchResult.data = this.collectionList[i].data;
 						searchResult.path = this.collectionList[i].path;
@@ -18,8 +22,8 @@ export default {
 					};
 				});
 			}); // this.collectionFiles.forEach
-			console.log("doSearch: searchResults", searchResults);
-			this.searchResults = searchResults;
-		},
-	} // computed
+			this.$store.commit("setSearchResults", searchResults);
+			this.searchResults = searchResults; // ?
+		} // doSearch
+	} // methods
 }

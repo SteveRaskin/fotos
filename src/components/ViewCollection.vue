@@ -28,7 +28,7 @@
 						:title="obj.metadata"
 						@click="updateObjId(obj.id)"
 						>
-						<img :src="require(`@/assets/img/collections/${subfolder}${imgDir}/${obj.imgFile}`)" />
+						<img :src="require(`@/assets/img/collections/${collectionGroup}/${imgDir}/${obj.imgFile}`)" />
 					</a>
 					<p>{{ obj.imgFile }}</p>
 				</li>
@@ -65,7 +65,7 @@
 						<img
 							ref="activeImage"
 							class="active-image"
-							:src="require(`@/assets/img/collections/${subfolder}${imgDir}/${collection[objID].imgFile}`)"
+							:src="require(`@/assets/img/collections/${collectionGroup}/${imgDir}/${collection[objID].imgFile}`)"
 							:alt="objID"
 							@load="updateImgDims"
 							:style="imgStyle"
@@ -84,24 +84,21 @@
 <script>
 
 	export default {
-		watch: {
-			'$route'(to, from) {
-				console.log("to, from", to, from);
-			}
-		},
 		props: {
 			// nope
 			file: String
 		},
 		data () {
 			return {
-				viewTitle: "",
-				imgDir: "",
-				selectedCollection: null,
+				collectionObj: null,
+
+				collectionGroup: null, // collectionObj.path, i.e., 'img/collections/[path/collectionGroup]'
+				imgDir: "", // image folder
+				displayName: "",
+				abstract: "",
+
 				collectionName: null,
-				displayName: String,
 				dataFile: null,
-				subfolder: null,
 				collectionLength: 0,
 				objID: 0,
 				activeImgWidth: null,
@@ -131,41 +128,27 @@
 		},
 
 		created: function() {
-			// $route.params doesn't survive a refresh, so get the manifest again (boo)
-			// and then find the displayName corresponding to the selectedCollection,
-			// the value that *does* survive a refresh 'cause it's the path's dynamic value
-			let collectionList = require("@/data/collections.json");
+			// 1. get the collectionObj; used for the collection group & image folder: /img/collections/[path/collectionGroup]/[imgDir]
+			// localStorage only to protect store loss if refresh; TODO: move to try/catch in the store?
+			this.$store.state.selectedCollectionObj ? this.collectionObj = this.$store.state.selectedCollectionObj : this.collectionObj = JSON.parse(localStorage.getItem("selectedCollectionObj")); // string-to-object to get values
 
-			// var index = peoples.findIndex(function(person) {
-			//   return person.attr1 == "john"
-			// }
-			let selectedCollectionIx = collectionList.findIndex(obj => {
-				return obj.data === this.$route.params.selectedCollection;
-			})
-			this.displayName = collectionList[selectedCollectionIx].displayName;
-			collectionList[selectedCollectionIx].path.length ? this.subfolder = `${collectionList[selectedCollectionIx].path}/` : this.subfolder = "";
+			this.displayName = this.collectionObj.displayName;
+			this.abstract = this.collectionObj.abstract;
+			this.collectionGroup = this.collectionObj.path;
+			this.imgDir = this.collectionObj.data;
 
-			// TODO:
-			// if (this.$route.params.selectedCollection === "private" && !currentUser) ...
-			if (this.$route.params.selectedCollection === "private") {
-				this.$router.replace({ name: 'LogIn' });
+			this.$store.state.selectedCollection ? this.collection = this.$store.state.selectedCollection : this.collection = JSON.parse(localStorage.getItem("selectedCollection")); // string-to-object to get values
+
+         // IDs, 'cause v-bind:key
+			for (let key in this.collection) {
+				this.collection[key].id = key;
 			}
-			else {
-				let collection = this.$route.params.selectedCollection;
-				this.imgDir = collection;
-				let jsonData = require("@/data/collectiondata/" + collection + ".json");
-	         // add IDs
-				for (let key in jsonData) {
-					jsonData[key].id = key;
-				}
-				this.collection = jsonData;
-				// OOPS: 'collection' is the file name, not the data
-				this.collectionLength = jsonData.length;
-				this.viewTitle = collection.replace(/[_]/gi, ' ');
-			}
+			this.collectionLength = this.collection.length;
 			window.addEventListener('keyup', this.detectKeys);
-			// console.clear();
 		}, // created
+
+		computed: {
+		},
 
 		mounted: function() {},
 		methods: {
@@ -176,9 +159,6 @@
 				this.objID = (this.objID === 0) ? parseInt(this.collectionLength - 1) : parseInt(this.objID -= 1);
 			},
 			objIdInc: function() {
-				// (this.objID === parseInt(this.collectionLength - 1)) ? console.log("the end") : console.clear();
-				// huh? since when was this wrong?
-				// this.objID = (this.objID === parseInt(this.collectionLength - 1)) ? parseInt(1) : parseInt(this.objID += 1);
 				this.objID = (this.objID === parseInt(this.collectionLength - 1)) ? parseInt(0) : parseInt(this.objID += 1);
 			},
 			buttonNav: function(event) {
@@ -207,7 +187,6 @@
 				// this.imgWrapperInnerStyle.border = "2px solid red";
 			}
 		}, // methods
-		computed: {},
 		beforeDestroy: function() {
 			window.removeEventListener('keyup', this.detectKeys);
 		},

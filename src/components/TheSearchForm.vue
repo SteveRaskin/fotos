@@ -4,17 +4,18 @@
 
 		<div class="search">
 
-			<input type="text" class="search-input" v-model="searchTerm" placeholder="search by name, occasion" />
+			<input
+				type="text"
+				class="search-input"
+				v-model="searchTerm"
+				placeholder="search by name, occasion"
+			/>
 			<router-link
 				tag="button"
 				class="search-submit"
 				:to="{
 					name: 'SearchResults',
-					params: {
-						searchTerm: this.searchTerm,
-						collectionList: this.collectionList,
-						collectionFiles: this.collectionFiles
-					},
+					params: { searchTerm: this.searchTerm },
 				}"
 				@click.native="doSearch(searchTerm)"
 				>
@@ -34,18 +35,25 @@
 
    export default {
 		props: {
-			collectionList: Array,
-			collectionFiles: Array
 		},
       data() {
          return {
-				search: "",
-				searchTerm: "",
-				searchResults: []
+				collectionList: [],
+				collectionFiles: []
          }
     	},
-		created: function() {},
-		mounted: function() {},
+		created: function() {
+		},
+		computed: {
+			searchTerm: {
+				get: function() { return this.$store.getters.getSearchTerm },
+				set: function(term) {
+					this.$store.commit("setSearchTerm", term);
+				}
+			},
+		},
+		mounted: function() {
+		},
 		mixins: [ Search ],
    }
 </script>

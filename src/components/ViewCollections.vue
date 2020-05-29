@@ -2,10 +2,6 @@
 
 	<div class="container container-collections">
 
-		<p>{{ count }}</p>
-
-		<button type="button" @click="increment">click</button>
-
 		<!-- TODO: heading component, here & ViewCollection (props: :to, text, class?, tag) -->
 		<div class="hx-wrapper">
 			<h1>
@@ -37,12 +33,9 @@
 					class="collection-link"
 					:to="{
 						name: 'Collection',
-						params: {
-							selectedCollection: tileObj.data,
-							collectionName: tileObj.data,
-							displayName: tileObj.name
-						},
+						params: { selectedCollection: tileObj.data }
 					}"
+					@click.native="setSelection(tileObj)"
 					>
 					<p class="collection-name">{{ tileObj.name }}</p>
 					<img :src="require('@/assets/img/collections/' + tileObj.path + tileObj.data + '/' + tileObj.placeholder)" alt="" />
@@ -59,7 +52,6 @@
 
 <script>
 
-	import { mapState } from "vuex";
 	import SearchForm from "@/components/TheSearchForm.vue";
 
 	export default {
@@ -81,44 +73,29 @@
 		},
 
 		created: function() {
-			// GET THE LIST OF COLLECTIONS ...
-			let collectionList = require("@/data/collections.json");
-			this.collectionList = collectionList;
-			// collections.json: obj.displayName (template), obj.data (data, <router-link> $route.param)
-			let collectionFiles = []; // the Files
-			let collectionTiles = []; // the Tiles
-			collectionList.forEach((collection, ix) => {
-				// ... require each collection's .json ... [ assumes collection_xyz.json is at /data/collectiondata/ ]
-				collectionFiles.push(require("@/data/collectiondata/" + collection.data + ".json"));
-				this.collectionFiles = collectionFiles;
+			if (!this.$store.state.collectionList.length) {
+				this.$store.dispatch('loadData');
+			}
+			this.collectionList = this.$store.state.collectionList;
+			this.collectionFiles = this.$store.state.collectionFiles;
+			this.collectionList.forEach((collectionObj, ix) => {
 				// ... create tileObj to hold name, placeholder img ...
 				let tileObj = {};
 				// ... store the name in the tileObj, push to collectionTiles[] ...
-				tileObj.name = collection.displayName;
-				tileObj.data = collection.data;
+				tileObj.name = collectionObj.displayName;
+				tileObj.data = collectionObj.data;
 				// if there's a path value in collections.json, set path in the Tiles, used in the template img URLs
-				collection.path.length ? tileObj.path = `${collection.path}/` : tileObj.path = "";
-				collectionTiles.push(tileObj);
+				collectionObj.path.length ? tileObj.path = `${collectionObj.path}/` : tileObj.path = "";
+				this.collectionTiles.push(tileObj);
 			})
 			// ... from each collection.json, set a random img as the placeholder ...
-			collectionFiles.forEach((collection, ix) => {
-				let placeholder = collection[this.random(collection.length)].imgFile;
-				collectionTiles[ix].placeholder = placeholder;
+			this.collectionFiles.forEach((collectionFile, ix) => {
+				let placeholder = collectionFile[this.random(collectionFile.length)].imgFile;
+				this.collectionTiles[ix].placeholder = placeholder;
 			})
-			this.collectionTiles = collectionTiles;
 		}, // created
 
 		methods: {
-			increment() {
-				this.$store.commit('increment');
-			},
-			passRouterLinkParams: function() {
-				// console.log("passRouterLinkParams");
-				this.$router.push({
-					// name: "Collection",
-					params: { testParam: "test string" }
-				});
-			},
 			// Math.floor() : largest integer less than or equal to a given number
 			// Math.random() : >= 0, < 1
 			random: function(cl) {
@@ -129,28 +106,17 @@
 				let randomVal = Math.floor(Math.random() * (max - min)) + min;
 				return randomVal;
 			},
+			setSelection: function(selObj) {
+				// collectionTiles.length === collectionList.length, ERGO, mutation handler requires only the index
+				this.$store.commit("setSelectedCollection", this.collectionTiles.indexOf(selObj)); // mutations
+			}
 		}, // methods
 
-	// was in computed {}, replaced by computed: mapState({})
-	// poo: function() {
-	// 	return this.$store.state.count;
-	// },
-	// poop: function() {
-	// 	return this.$store.state.selectedCollection;
-	// },
-
-		computed: mapState({
-			// arrow functions can make the code very succinct!
-			count: state => state.count,
-
-			// passing the string value 'count' is same as `state => state.count`
-			countAlias: 'count',
-
-			// to access local state with `this`, a normal function must be used
-			countPlusLocalState (state) {
-				return state.count + this.localCount
-			}
-		})
+		computed: {
+			getSelectedCollection: function() {
+				return this.$store.state.selectedCollection;
+			},
+		}
 	}
 </script>
 
@@ -160,10 +126,7 @@
 
 <style scoped lang="scss">
 
-	.container {
-		// flex-flow: row wrap;
-		// border: 1px dotted #111;
-	}
+	.container {}
 
 	// ul.collections-thumbnails
 	.collection-thumbnails {
@@ -180,11 +143,8 @@
 			height: 180px;
 			margin-bottom: 3rem;
 			justify-content: space-between;
-
 			overflow: hidden;
-			// background: lighten($b, 15%);
 			color: $w;
-			// border: 1px solid #333;
 			border-radius: .15rem;
 			transition: all ease-in-out .3s;
 			.collection-link {
