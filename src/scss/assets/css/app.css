@@ -1,0 +1,523 @@
+/*
+	COLORS
+	======
+
+	.all-projects/(.home?) = global
+
+	// reds, darkest -> lightest:
+		maroon: rgb(128, 0, 0);
+		darkred: rgb(139, 0, 0);
+		firebrick: rgb(178, 34, 34);
+		crimson: rgb(220, 20, 60);
+		orange: rgb(255, 165, 0);
+
+	// greens, darkest -> lightest:
+		lightseagreen: rgb(32, 178, 170); // blue-green, fits with theme & edit
+		green: rgb(0, 128, 0);
+		forestgreen: rgb(34, 139, 34); (slightly lighter)
+
+		midnightblue: rgb(25, 25, 112);
+*/
+/*
+
+??? convention, but makes sense only (?) for ViewXYZ components (e.g., TheSubheader.vue doesn't have a .container YET; should it? should they all?):
+
+<template>
+	<div class="container container-[view]">
+
+		<section class="section-[view]">
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.11; }
+
+.hx-wrapper {
+  width: 100%;
+  width: calc(100% + 1.5rem);
+  margin-bottom: 1.8rem;
+  border-bottom: 3px double floralwhite; }
+
+h1 .collections-link,
+h1 .view-title {
+  display: inline-flex;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: floralwhite; }
+
+h1 .collections-link {
+  cursor: pointer; }
+
+h1 .view-title {
+  text-transform: capitalize; }
+
+h1 .view-title::before {
+  display: inline-block;
+  padding: 0 .9rem;
+  content: ">";
+  color: dimgray; }
+
+.collections-link {
+  color: lime;
+  font-size: 1.5rem;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: #1248ff; }
+
+a:active,
+a:focus {
+  outline: 3px double #ccc; }
+
+.main p {
+  font-size: 1.35rem; }
+
+ul {
+  list-style: none; }
+
+.main ul {
+  font-size: 1.2rem; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.errors {
+  width: 100%;
+  margin-bottom: .9rem;
+  padding: .9rem;
+  color: red;
+  border: 1px solid red;
+  border-radius: .3rem; }
+
+.error {
+  color: red; }
+
+.strongest {
+  font-weight: bold;
+  color: #000; }
+
+.stronger {
+  font-weight: bold;
+  color: #666;
+  font-style: italic; }
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  border: 0px dotted #333; }
+
+section {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-bottom: 3rem; }
+
+html {
+  width: 100%;
+  /* DNU vw on html or body */
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+body,
+#app,
+.header,
+.main,
+.footer {
+  display: flex;
+  width: 100%; }
+
+body {
+  font-size: 100%;
+  font-family: "Avenir", Helvetica, Arial, "sans-serif";
+  background: #000;
+  color: #222;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+#app {
+  height: 100vh;
+  padding: 0 4.5%;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 0px dotted lime; }
+
+/*
+   <body>
+	- <app>
+	- - <header>
+	- - <main> [ div.main ]
+	- - - <div.container [view/component]>
+	- - <footer>
+*/
+.header {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 6rem;
+  padding: 0 4.5%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #454545;
+  background: linear-gradient(180deg, #454545 0%, black 33%, black 66%, #454545 100%);
+  z-index: 999; }
+
+.main {
+  position: relative;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  margin-top: calc(6rem + 0px);
+  margin: 0;
+  padding: 3rem 0;
+  border: 0px dotted red; }
+
+.footer {
+  display: none;
+  min-height: 6rem;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 1.5rem .9rem;
+  background: #000a2c;
+  color: #fff; }
+
+.footer .debug {
+  width: 100%; }
+
+/* ============ FORM CONTROLS ============ */
+form {
+  width: 100%; }
+
+.fieldset-wrapper {
+  width: 100%; }
+
+fieldset {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  color: #000;
+  background: #fff;
+  border: 3px double #ccc;
+  border-radius: .3rem; }
+
+fieldset legend {
+  padding: .3rem .9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: .3rem; }
+
+legend span {
+  margin-right: .9rem;
+  padding: .15rem .6rem;
+  font-weight: normal;
+  color: #000;
+  background: gold;
+  text-transform: none;
+  border-radius: .15rem; }
+
+legend span::after {
+  display: inline-block;
+  content: ":"; }
+
+.label {
+  display: inline-block;
+  color: #777;
+  font-weight: bold; }
+
+.value {
+  color: #222;
+  font-weight: 600; }
+
+.label-input {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1.5rem; }
+
+.label-input label {
+  display: block;
+  text-transform: capitalize; }
+
+.label-input label:after {
+  content: ":"; }
+
+.label-input label span {
+  text-transform: none; }
+
+.state-zip {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
+
+.label-input.state,
+.label-input.zip {
+  width: 48%; }
+
+.label-input.billing {
+  margin: 0; }
+
+.label-input.contact button {
+  margin-top: .3rem; }
+
+.label-input.radio:nth-of-type(3) {
+  margin-bottom: .3rem; }
+
+.label-input#elsewhere label {
+  visibility: hidden;
+  height: 0; }
+
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="text"],
+input[type="time"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 1.2rem .9rem;
+  font-size: .99rem;
+  /* not inherited */
+  border: 1px solid #ccc;
+  border-radius: .3rem; }
+
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="text"],
+input[type="time"] {
+  height: 2.7rem; }
+
+textarea {
+  height: 6rem;
+  padding: .6rem .9rem;
+  resize: vertical; }
+
+.checkboxes label,
+.checkboxes input {
+  display: inline-block; }
+
+.checkboxes input {
+  margin-right: .9rem; }
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  /* margins scoped */ }
+
+.buttons .btn:not(:last-child) {
+  margin-right: 1.5rem; }
+
+button,
+a.btn,
+input[type="text"],
+input[type="number"],
+textarea {
+  font-size: 1.2rem;
+  /* not inherited */
+  border-radius: .3em; }
+
+/*
+		[ https://github.com/vuejs/vue-loader/issues/363 ]
+		https://mayvendev.com/blog/inner-shadows-in-css-images-text-and-beyond
+		re: inset bevel text effect
+*/
+.btn {
+  display: inline-block;
+  padding: .3rem 1.5rem;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  line-height: 1.11rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  word-spacing: .3rem;
+  border: 1px solid #000;
+  border-radius: .9em;
+  cursor: pointer;
+  transition: .15s ease-in-out; }
+
+.btn:hover {
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+  border-radius: .3em; }
+
+.btn:disabled,
+.btn:disabled:hover {
+  color: #999999;
+  background: #fff;
+  border: 1px solid #999999;
+  cursor: not-allowed; }
+
+.btn::before {
+  display: inline-block;
+  padding-right: .9rem;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+.btn-color-1 {
+  color: #1248ff;
+  border: 1px solid #1248ff; }
+
+.btn-color-1:hover,
+.btn-color-1:active {
+  color: #fff;
+  background: #1248ff;
+  border: 1px solid #1248ff; }
+
+/* https://www.toptal.com/designers/htmlarrows/math/*/
+.btn-color-2 {
+  color: dodgerblue;
+  border: 1px solid dodgerblue; }
+
+.btn-color-2:hover,
+.btn-color-2:active {
+  color: #fff;
+  background: dodgerblue;
+  border: 1px solid dodgerblue; }
+
+.btn-color-3 {
+  color: lightseagreen;
+  border: 1px solid lightseagreen; }
+
+.btn-color-3:hover,
+.btn-color-3:active {
+  color: #fff;
+  background: lightseagreen;
+  border: 1px solid lightseagreen; }
+
+.btn-color-4 {
+  color: #0f960f;
+  border: 1px solid #0f960f; }
+
+.btn-color-4:hover,
+.btn-color-4:active {
+  color: #fff;
+  background: #0f960f;
+  border: 1px solid #0f960f; }
+
+.btn-color-5 {
+  color: orangered;
+  border: 1px solid orangered; }
+
+.btn-color-5:hover,
+.btn-color-5:active {
+  color: #fff;
+  background: orangered;
+  border: 1px solid orangered; }
+
+.btn-color-6 {
+  color: #d20f0f;
+  border: 1px solid #d20f0f; }
+
+.btn-color-6:hover,
+.btn-color-6:active {
+  color: #fff;
+  background: #d20f0f;
+  border: 1px solid #d20f0f; }
+
+.btn-color-bw {
+  color: #000;
+  background: #fff;
+  border: 1px solid #000; }
+
+.btn-color-bw:hover,
+.btn-color-bw:active {
+  color: #fff;
+  background: #000;
+  border: 1px solid #000; }
+
+.btn-all-projects::before {
+  content: "\2190"; }
+
+.btn-add-project::before {
+  content: "\002B"; }
+
+.btn-debug {
+  background: #999;
+  color: #fff; }
+
+#nav {
+  text-align: center;
+  margin-bottom: .3rem; }
+
+#nav ul {
+  display: none;
+  list-style: none; }
+
+#nav li {
+  margin-bottom: 1px; }
+
+/* #email-link-1 visible to mobile & tablet (not hidden by default); #email-link-2 hidden by default, un-hidden to desktop */
+#nav #email-link-2 {
+  display: none; }
+
+#nav a,
+#nav li a {
+  display: block;
+  font-size: .9rem;
+  line-height: 2.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #c90;
+  background: #999;
+  color: #fff; }
+
+/* #nav a includes a#menu-trigger */
+#menu-trigger {
+  border-radius: 6px; }
+
+#nav li:first-child a {
+  border-radius: 6px 6px 0 0; }
+
+#nav li:last-child a {
+  border-radius: 0 0 6px 6px; }
+
+/* ======================== SLIDESHOW CONTROLS 1: ARROWS ======================== */
+#nav-wrap p {
+  margin-bottom: 15px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5em;
+  font-style: italic;
+  text-align: center;
+  border-bottom: 3px double #666; }
+
+#nav-wrap p strong {
+  color: #000; }
+
+/* ======================== SLIDESHOW CONTROLS 2: SLIDE SELECTOR [THUMBNAILS] ======================== */
+/* ========= (hidden from phone.portrait/landscape, tablet.portrait/landscape ) ========= */
+/* ======================== SLIDES ======================== */
+
+/*# sourceMappingURL=app.css.map */

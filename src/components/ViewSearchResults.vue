@@ -2,6 +2,15 @@
 
 	<div class="search-wrapper">
 
+		<router-link
+			tag="a"
+			class="collections-link"
+			:to="{ name: 'Collections', params: {} }"
+			tabindex="3"
+		>
+			&larr; back to the Collections
+		</router-link>
+
 		<app-search />
 
 		<div
@@ -9,10 +18,10 @@
 			v-bind:class="[{ open: searchResults.length > 0 }, { noresults: searchResults.length < 1 }]"
 		>
 			<h4 class="results-count" v-if="searchResults.length == 0">
-				no results matching "{{ searchTerm }}":
+				no results matching "{{ titleCase(searchTerm) }}":
 			</h4>
 			<h4 class="results-count" v-if="searchResults.length > 0">
-				{{ searchResults.length }} result<span v-if="searchResults.length > 1">s</span> matching search "{{ searchTerm }}":
+				{{ searchResults.length }} result<span v-if="searchResults.length > 1">s</span> matching search "{{ titleCase(searchTerm) }}":
 			</h4>
 
 			<ul class="search-results">
@@ -32,6 +41,7 @@
 
 	import SearchForm from "@/components/TheSearchForm.vue"
 	import Search from '@/mixins/mixin_search.js';
+	import TitleCase from '@/mixins/titleCase.js';
 
    export default {
 		components: {
@@ -73,13 +83,21 @@
 			}
 		},
 		mounted: function() {},
-		mixins: [ Search ]
+		mixins: [ Search, TitleCase ]
    }
 </script>
 
 
 
 <style lang="scss" scoped>
+
+	.collections-link {
+		font-size: 1.2rem;
+		border-bottom: 1px dotted lime;
+	}
+	.collections-link:hover {
+		border-bottom: 1px solid lime;
+	}
 
 	.search-wrapper {
 		width: 100%;
@@ -140,7 +158,6 @@
 	   .search-results li {
 	      margin-bottom: .9rem;
 			padding: $space * 3;
-	      color: rgb(18, 72, 255);
 	      border: .15rem solid lighten($b, 9%);
 	      border-radius: .3rem;
 			transition: ease-in-out all .15s;

@@ -9,11 +9,14 @@
 			</div>
 
 			<p class="welcome">
-				Welcome to the Raskin's foto gallery!
+				Welcome back to the Raskin's foto gallery!
 			</p>
 
 			<p class="welcome">
-				Please consider this just the initial 'beta' release of this application, and that my priority was to find, select, edit, optimize &amp; sort as many images as possible, and as quickly as possible. There are improvements in mind for a future version, e.g., a search function, some clarifying texts/introductory remarks corresponding to each collection, etc.
+				Some improvements have been made to the application, mainly a search function, which you'll see on the 'Collections' view, and a new 'Search Results' view. The search results are based on the image data 'tags' which are mostly names, ergo you'll get the most comprehensive results with name searches. There are a few other types of search that will also have results, e.g., "backyard", "birthday", "dinner", but evidently none of the tag data yet includes 'Bar Mitzvah', and the only city that returns results is Ottawa.
+			</p>
+			<p class="welcome">
+				Now that this functionality has been added, I can eventually add new data (images) at my earliest convenience. Also, still pending: some text corresponding to each collection, etc.
 			</p>
 			<p class="welcome">
 				Apologies for the basic captions, and for any errors therein. Also I'm aware that there are some dubious groupings, and perhaps some incorrect dates - these type of errors are more likely in the older collections, because the image files' datestamps may have been overwritten when duplicated or moved.
@@ -40,7 +43,6 @@
 			</p>
 
 
-
 			<router-link
 				tag="a"
 				class="collections-link"
@@ -50,47 +52,6 @@
 				go to the Collections
 			</router-link>
 
-
-
-
-
-
-
-<!--
-			<div class="" v-if="!loggedIn">
-				<p class="welcome">
-					If you have an account, please
-					<router-link
-						tag="a"
-						class="btn btn-welcome"
-						:to="{ name: 'LogIn', params: {} }"
-						>log in
-					</router-link>
-					, otherwise, please
-					<router-link
-						tag="a"
-						class="btn btn-welcome"
-						:to="{ name: 'Collections', params: {} }"
-						>come on in!
-					</router-link>
-				</p>
-			</div>
-
-			<div class="" v-if="loggedIn">
-				<p>
-					By the way, you're still logged in; wanna
-					<router-link
-						tag="a"
-						class="btn btn-welcome"
-						v-on:click.native="signOut"
-						:to="{ name: 'Welcome', params: {} }"
-						>log out
-					</router-link>
-					?
-				</p>
-
-			</div>
--->
 
 		</section>
 	</div>
@@ -157,7 +118,7 @@
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 	.welcome { margin-bottom: 1.8rem; }
 	.container-welcome h1 {
@@ -202,9 +163,6 @@
 
 	.collections-link {
 		margin-top: 3rem;
-		color: lime;
-		font-size: 1.5rem;
-		cursor: pointer;
 		border-bottom: 1px dotted lime;
 	}
 	.collections-link:hover {

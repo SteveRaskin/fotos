@@ -8,32 +8,27 @@ Vue.use(Vuex)
 let initCollectionList;
 try {
 	initCollectionList = JSON.parse(localStorage.getItem("collectionList"))
-	console.log("try");
 }
 catch (e) {
-	console.log("catch");
-	console.warn("no saved search results")
+	console.warn("no collectionList in localStorage")
 	initCollectionList = []
 }
+
 let initCollectionFiles;
 try {
 	initCollectionFiles = JSON.parse(localStorage.getItem("collectionFiles"))
-	console.log("try");
 }
 catch (e) {
-	console.log("catch");
-	console.warn("no saved search results")
+	console.warn("no collectionFiles in localStorage")
 	initCollectionFiles = []
 }
-
-
 
 let initialSearchResults;
 try {
 	initialSearchResults = JSON.parse(localStorage.getItem("searchResults"))
 }
 catch (e) {
-	console.warn("no saved search results")
+	console.warn("no search results in localStorage")
 	initialSearchResults = []
 }
 

@@ -1,13 +1,3 @@
-/*
-
-??? convention, but makes sense only (?) for ViewXYZ components (e.g., TheSubheader.vue doesn't have a .container YET; should it? should they all?):
-
-<template>
-	<div class="container container-[view]">
-
-		<section class="section-[view]">
-*/
-
 *,
 *:before,
 *:after { box-sizing: inherit; margin: 0; padding: 0; font-family: inherit; }
@@ -31,14 +21,12 @@ h1 .view-title {
 	font-size: 1.8rem;
 	font-weight: bold;
 	color: floralwhite;
-	// border: 1px solid red;
 }
 h1 .collections-link {
 	cursor: pointer;
 }
 h1 .view-title {
 	text-transform: capitalize;
-	// border: 1px solid blue;
 }
 h1 .view-title::before {
 	display: inline-block;
@@ -49,12 +37,11 @@ h1 .view-title::before {
 }
 
 
-// .main h2 {
-// 	display: inline-flex;
-// 	padding-bottom: .6rem;
-// 	font-size: 1.8rem;
-// 	color: floralwhite;
-// }
+.collections-link {
+	color: lime;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
 
 
 
@@ -63,17 +50,11 @@ a {
 	color: $theme1;
 }
 a:hover,
-a:active {
-	// border-bottom: 1px solid $theme1;
-}
+a:active {}
 
-// a:active,
-// a:focus { outline: 3px double #ccc; }
-
-// wow, cool skeleton effect!
 a:active,
 a:focus {
-	outline: 3px double #ccc;
+	outline: 1px dotted #ccc;
 }
 
 .main p {
@@ -111,8 +92,6 @@ img { max-width: 100%; height: auto; }
 	display: flex;
 	width: 100%; // TB var'd, re; header padding-left
 	flex-flow: column nowrap;
-	// justify-content: space-between;
-	border: 0px dotted #333;
 }
 
 section {

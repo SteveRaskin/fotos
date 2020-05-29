@@ -18,8 +18,6 @@
 
 		<app-search
 			v-if="(viewName == 'Collections')"
-			v-bind:collectionFiles="collectionFiles"
-			v-bind:collectionList="collectionList"
 		/>
 
 		<ul class="thumbnails collection-thumbnails">

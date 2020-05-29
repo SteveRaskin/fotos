@@ -19,5 +19,8 @@
 // 	border: 2px solid red;
 // }
 
-// so if you want it in assets?
-// sass --watch scss:assets/css
+
+
+// so if you want it in assets, cd to /src/scss, then:
+// sass --watch app.scss:../assets/css/app.css
+// result: /src/assets/css/app.css

@@ -2,14 +2,17 @@
 
 	<div class="search-wrapper">
 
-		<div class="search">
+		<form class="search">
 
 			<input
+				ref="searchInput"
 				type="text"
 				class="search-input"
 				v-model="searchTerm"
 				placeholder="search by name, occasion"
 			/>
+
+			<!-- TODO: replace with native button? w/$route, name param in mixin? -->
 			<router-link
 				tag="button"
 				class="search-submit"
@@ -21,7 +24,8 @@
 				>
 				<p class="">show me!</p>
 			</router-link>
-		</div>
+
+		</form>
 
 	</div><!-- END .search-wrapper -->
 
@@ -53,6 +57,10 @@
 			},
 		},
 		mounted: function() {
+			this.$refs.searchInput.value = "";
+		},
+		updated: function() {
+			// oops, updated with every keystroke
 		},
 		mixins: [ Search ],
    }

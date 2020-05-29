@@ -3,7 +3,8 @@
 import Vue from 'vue';
 import App from '@/App.vue';
 
-import './scss/app.scss';
+// import './scss/app.scss';
+import '@/assets/css/app.css';
 
 // GLOBAL NON-COMPONENTS
 import Store from './store/index.js';
