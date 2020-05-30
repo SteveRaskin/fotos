@@ -14,8 +14,10 @@ catch (e) {
 	initCollectionList = []
 }
 
+
 let initCollectionFiles;
 try {
+	// console.log("try initCollectionFiles");
 	initCollectionFiles = JSON.parse(localStorage.getItem("collectionFiles"))
 }
 catch (e) {
@@ -32,6 +34,8 @@ catch (e) {
 	initialSearchResults = []
 }
 
+
+
 export default new Vuex.Store({
 	strict: true,
 	// plugins: [createPersistedState()], // the entire persisted state is 72kb
@@ -42,7 +46,7 @@ export default new Vuex.Store({
 		selectedCollection: null,
 		ixSelected: null, // nis
 		searchTerm: "",
-		searchResults: initialSearchResults,
+		searchResults: initialSearchResults
 	},
 	mutations: {
 		setCollectionList(state, payload) { // per action
@@ -50,8 +54,7 @@ export default new Vuex.Store({
 			localStorage.setItem("collectionList", JSON.stringify(payload));
 		},
 		setCollectionFiles(state, payload) { // per action
-			// ... require each collection's .json ... [ assumes collection_xyz.json is at /data/collectiondata/ ]
-			state.collectionFiles.push(require("@/data/collectiondata/" + payload.data + ".json"));
+			state.collectionFiles = payload;
 			localStorage.setItem("collectionFiles", JSON.stringify(state.collectionFiles));
 		},
 		setSelectedCollection(state, payload) {
@@ -73,11 +76,9 @@ export default new Vuex.Store({
 	},
 	getters: { // getters: state is 1st arg
 		getCollectionList(state) {
-			// console.log("getCollectionList", state.collectionList);
 			return state.collectionList;
 		},
 		getCollectionFiles(state) {
-			// console.log("getCollectionFiles", state.collectionFiles);
 			return state.collectionFiles;
 		},
 		getSelectedCollectionObj(state) {
@@ -99,10 +100,14 @@ export default new Vuex.Store({
 		loadData(context, payload) {
 			// GET THE LIST OF COLLECTIONS ...
 			let collectionList = require("@/data/collections.json");
+			let collectionFiles = [];
 			context.commit("setCollectionList", collectionList);
 			collectionList.forEach((collection, ix) => {
-				context.commit("setCollectionFiles", collection);
+				// ... require each collection's .json ... [ assumes collection_xyz.json is at /data/collectiondata/ ]
+				let collectionFile = require("@/data/collectiondata/" + collection.data + ".json"); // √
+				collectionFiles.push(collectionFile);
 			});
+			context.commit("setCollectionFiles", collectionFiles);
 		},
 	},
 	modules: {

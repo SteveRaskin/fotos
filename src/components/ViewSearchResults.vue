@@ -55,28 +55,31 @@
          }
     	},
 		created: function() {
+			this.$store.state.collectionList.length ? this.collectionList = this.$store.state.collectionList : this.collectionList = JSON.parse(localStorage.getItem("collectionList")); // string-to-object to get values
+
+			this.$store.state.collectionFiles.length ? this.collectionFiles = this.$store.state.collectionFiles : this.collectionFiles = JSON.parse(localStorage.getItem("collectionFiles")); // string-to-object to get values
+
 			// for the template
 			this.searchTerm = this.$route.params.searchTerm;
-			// this.searchTerm = this.getSearchTerm; // TODO: add to $store init ?
-		},
-		computed: {
-			// getSearchTerm & searchResults are committed from the search mixin
-			getSearchTerm() {
-				return this.$store.getters.getSearchTerm;
-			},
-			searchResults: {
-				get: function() { return this.$store.getters.getSearchResults },
-				set: function() {}
-			},
 		},
 		beforeRouteUpdate(to, from, next) {
 			next();
 			this.searchTerm = this.$route.params.searchTerm;
-			// 'back', 'forward' don't update results
 			this.doSearch(this.searchTerm);
 		},
+		computed: {
+			// getters run after the search mixin has re-committed
+			getSearchTerm() {
+				return this.$store.getters.getSearchTerm;
+			},
+			searchResults: {
+				get: function() {
+					return this.$store.getters.getSearchResults;
+				},
+				set: function() {}
+			},
+		},
 		updated: function() { // fires on subsequent searches
-			// console.log("updated");
 		},
 		watch: {
 			'$route'(to, from) {

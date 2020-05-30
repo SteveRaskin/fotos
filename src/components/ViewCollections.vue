@@ -71,11 +71,10 @@
 		},
 
 		created: function() {
-			if (!this.$store.state.collectionList.length) {
-				this.$store.dispatch('loadData');
-			}
+			this.$store.dispatch('loadData');
 			this.collectionList = this.$store.state.collectionList;
 			this.collectionFiles = this.$store.state.collectionFiles;
+
 			this.collectionList.forEach((collectionObj, ix) => {
 				// ... create tileObj to hold name, placeholder img ...
 				let tileObj = {};

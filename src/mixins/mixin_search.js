@@ -7,9 +7,6 @@ export default {
 
 			let searchResults = [];
 
-			this.collectionList = this.$store.state.collectionList;
-			this.collectionFiles = this.$store.state.collectionFiles;
-
 			this.collectionFiles.forEach((collectionFile, i) => {
 				collectionFile.filter((imgObj) => {
 					let searchResult = {}; // TODO: REMEMBER THIS, PRESERVE YOUR SANITY: *WITHIN* THE ITERATION

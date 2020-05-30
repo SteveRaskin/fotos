@@ -47,10 +47,16 @@
          }
     	},
 		created: function() {
+			// we need the data here 'cause it makes its debut in ViewCollections
+			this.$store.state.collectionList.length ? this.collectionList = this.$store.state.collectionList : this.collectionList = JSON.parse(localStorage.getItem("collectionList")); // string-to-object to get values
+
+			this.$store.state.collectionFiles.length ? this.collectionFiles = this.$store.state.collectionFiles : this.collectionFiles = JSON.parse(localStorage.getItem("collectionFiles")); // string-to-object to get values
 		},
 		computed: {
 			searchTerm: {
-				get: function() { return this.$store.getters.getSearchTerm },
+				get: function() {
+					return this.$store.getters.getSearchTerm;
+				},
 				set: function(term) {
 					this.$store.commit("setSearchTerm", term);
 				}
@@ -60,7 +66,6 @@
 			this.$refs.searchInput.value = "";
 		},
 		updated: function() {
-			// oops, updated with every keystroke
 		},
 		mixins: [ Search ],
    }
