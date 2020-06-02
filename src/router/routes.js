@@ -11,17 +11,14 @@ Vue.use(Router)
 
 export default new Router({
 	mode: "history",
-	// https://router.vuejs.org/api/#base
-	// the base URL of the app; if the SPA is served at domain.com/app/, then base should be "/app/" (default: "/")
-	base: '/fotos/',
+	base: process.env.BASE_URL,
 	scrollBehavior() {
 		return { x: 0, y: 0 };
 	},
 	routes: [
-		// redirect to a path, not a name
 		{
 			path: '*',
-			redirect: '/index.html'
+			redirect: '/index.html' // redirect to a path, not a name
 		},
 		{
 			path: '/',
@@ -100,18 +97,3 @@ export default new Router({
 		},
 	]
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
