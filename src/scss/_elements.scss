@@ -7,7 +7,11 @@ h2,
 h3,
 h4,
 h5,
-h6 { font-weight: normal; line-height: 1.11; }
+h6 {
+	font-family: $font1;
+	font-weight: normal;
+	line-height: 1.11;
+}
 
 .hx-wrapper {
 	width: 100%;

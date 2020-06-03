@@ -220,10 +220,11 @@
 			margin: 0 auto;
 			// border-top: 6px solid red;
 			.caption {
-				font-size: 1.2rem;
+				font-family: $font1;
+				font-size: 1.29rem;
 				font-weight: bold;
 				text-align: right;
-				color: gold;
+				color: floralwhite;
 			}
 			.active-image-wrapper-inner {
 				width: auto;

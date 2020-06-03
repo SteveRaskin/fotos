@@ -17,6 +17,7 @@
 
 			<ul class="search-results">
 				<li v-for="(imgObj, ix) in searchResults" :key="ix">
+					<p>{{ imgObj.metadata }}</p>
 					<img :src="require('@/assets/img/collections/' + imgObj.path + '/' + imgObj.data + '/' + imgObj.imgFile)" alt="" />
 				</li>
 			</ul>
@@ -132,6 +133,11 @@
 				border: .15rem solid lighten($b, 9%);
 				border-radius: .3rem;
 				transition: ease-in-out all .15s;
+				p {
+					text-align: right;
+					font-size: 1.05rem;
+					text-transform: capitalize;
+				}
 				img {
 					display: block;
 					width: 100%;

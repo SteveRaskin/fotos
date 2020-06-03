@@ -22,7 +22,7 @@
 				}"
 				@click.native="doSearch(searchTerm)"
 				>
-				<span v-if="searchTerm">find pics of {{ searchTerm }}</span>
+				<span v-if="searchTerm">find pics of <span>'{{ searchTerm }}'</span></span>
 				<span v-else>find pics</span>
 			</router-link>
 
@@ -101,6 +101,7 @@
 				align-items: center;
 				justify-content: center;
 				font-size: 1.11rem;
+				span span { text-transform: capitalize; }
 			}
 		}
 	} // .search-wrapper

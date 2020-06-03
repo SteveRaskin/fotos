@@ -171,8 +171,8 @@
 				align-content: center;
 				background: rgba(0, 0, 0, .66);
 				color: $w;
-				font-family: $font2;
-				font-size: 1.11rem;
+				font-family: $font1;
+				font-size: 1.05rem;
 				font-weight: 600;
 				text-align: center;
 				text-transform: uppercase;

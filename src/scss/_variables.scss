@@ -21,12 +21,9 @@ $error: red;
 
 
 // TYPOGRAPHY
-$font1: "Avenir", Helvetica, Arial, 'sans-serif'; // prefer for <Hx>, body
-$font2: "Abel", Helvetica, Arial, 'sans-serif'; // prefer for numbers; maybe also captions?
-
-$font3: "Courier", Helvetica, Arial, 'sans-serif'; // yup
-
-
+$font1: "Abel", Helvetica, Arial, 'sans-serif'; // <Hx>
+$font2: 'Montserrat', sans-serif; // body, captions
+$font3: "Courier", Helvetica, Arial, 'sans-serif';
 
 $body-copy1: #222;
 $body-copy2: #444;

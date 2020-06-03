@@ -33,7 +33,7 @@
 		a {
 			display: block;
 			color: #fff;
-			font-family: $font2;
+			font-family: $font1;
 			font-size: 1.5rem;
 			font-weight: 600;
 			text-transform: capitalize;
