@@ -206,7 +206,6 @@
 		// height: calc(100vh - [ header height ]);
 		margin: 0 -1.5rem; /* re; buttons, which I want flush */
 		// padding: 0 45px; /* re; arrows */
-
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		// align-items: flex-start;

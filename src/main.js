@@ -1,9 +1,6 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from '@/App.vue';
 
-// import './scss/app.scss';
 import '@/assets/css/app.css';
 
 // GLOBAL NON-COMPONENTS
@@ -15,9 +12,6 @@ import VueResource from 'vue-resource';
 import theHeader from '@/components/TheHeader.vue';
 import theNav from '@/components/TheNav.vue';
 import theFooter from '@/components/TheFooter.vue';
-
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
 
 
 // REGISTER GLOBAL COMPONENTS

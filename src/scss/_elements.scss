@@ -38,7 +38,7 @@ h1 .view-title::before {
 
 
 .collections-link {
-	color: lime;
+	color: royalblue;
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -54,7 +54,7 @@ a:active {}
 
 a:active,
 a:focus {
-	outline: 1px dotted #ccc;
+	outline: 0;
 }
 
 .main p {

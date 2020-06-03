@@ -9,7 +9,7 @@ export default {
 
 			this.collectionFiles.forEach((collectionFile, i) => {
 				collectionFile.filter((imgObj) => {
-					let searchResult = {}; // TODO: REMEMBER THIS, PRESERVE YOUR SANITY: *WITHIN* THE ITERATION
+					let searchResult = {};
 					if (imgObj.tags.indexOf(searchTerm) !== -1) {
 						searchResult.data = this.collectionList[i].data;
 						searchResult.path = this.collectionList[i].path;

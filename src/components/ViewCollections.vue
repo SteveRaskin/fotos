@@ -27,7 +27,7 @@
 				v-bind:key="tileObj.name"
 			>
 				<router-link
-					tag="div"
+					tag="a"
 					class="collection-link"
 					:to="{
 						name: 'Collection',
@@ -35,7 +35,7 @@
 					}"
 					@click.native="setSelection(tileObj)"
 					>
-					<p class="collection-name">{{ tileObj.name }}</p>
+					<span class="collection-name">{{ tileObj.name }}</span>
 					<img :src="require('@/assets/img/collections/' + tileObj.path + tileObj.data + '/' + tileObj.placeholder)" alt="" />
 				</router-link>
 			</li>
@@ -130,8 +130,9 @@
 		display: flex;
 		width: 100%;
 		margin: 0;
-		flex-flow: row wrap;
-		justify-content: space-between;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: center;
 		.collection-thumbnail {
 			position: relative;
 			display: flex;
@@ -139,17 +140,23 @@
 			width: 180px;
 			height: 180px;
 			margin-bottom: 3rem;
+			padding: .45rem;
 			justify-content: space-between;
 			overflow: hidden;
 			color: $w;
 			border-radius: .15rem;
 			transition: all ease-in-out .3s;
 			.collection-link {
+				display: block;
+				width: 100%;
+				height: 100%;
 				cursor: pointer;
 			}
 			img {
-				width: 180px;
-				height: 180px;
+				// width: 180px;
+				// height: 180px;
+				width: 100%;
+				height: 100%;
 				border-radius: 51%;
 			}
 			.collection-name {
@@ -175,101 +182,12 @@
 		} // li
 	} // .thumbnails
 
-
-	// (still in .slideshow)
-	$thumbnailSize: 60px; // init
-	$thumbnailCount: 0;
-
-   // // min-width values include 330-450px for image wrapper
-	// @media (min-width: 670px) { .thumbnails { display: inline-block; } }
-	//
-	// // MQ 1: 670px
-	// @media (min-width: 670px) {
-	// 	$thumbnailCount: 4;
-	// 	$thumbnailsWidth: calc((#{$thumbnailSize} * #{$thumbnailCount}) + ((#{$thumbnailSize}/3) * (#{$thumbnailCount} - 1)));
-	// 	.thumbnails {
-	// 		// border-top: 6px solid black;
-	// 		min-width: $thumbnailsWidth;
-	// 		max-width: $thumbnailsWidth;
-	// 		margin: 0 $thumbnailSize/3;
-	// 		li	{
-	// 			width: $thumbnailSize;
-	// 			height: $thumbnailSize;
-	// 			margin: 0 $thumbnailSize/3 $thumbnailSize/3 0;
-	// 			&:nth-of-type(1n) { margin-right: $thumbnailSize/3; }
-	// 			&:nth-of-type(4n) { margin-right: 0; }
-	// 			a img {
-	// 				width: $thumbnailSize;
-	// 				height: $thumbnailSize;
-	// 			}
-	// 		}
-	// 	}
-	// 	.active-image-wrapper-outer {
-	// 		width: calc(100% - (#{$thumbnailsWidth} + #{$thumbnailSize/3}));
-	// 	}
-	// } // MQ 1: 670px
-	//
-	// // MQ 2: 810px
-	// @media (min-width: 810px) {
-	// 	$thumbnailCount: 5;
-	// 	$thumbnailsWidth: calc((#{$thumbnailSize} * #{$thumbnailCount}) + ((#{$thumbnailSize}/3) * (#{$thumbnailCount} - 1)));
-	// 	.thumbnails {
-	// 		// border-top: 6px solid red;
-	// 		min-width: $thumbnailsWidth;
-	// 		max-width: $thumbnailsWidth;
-	// 		margin: 0 $thumbnailSize/3;
-	// 		li	{
-	// 			width: $thumbnailSize;
-	// 			height: $thumbnailSize;
-	// 			margin: 0 $thumbnailSize/3 $thumbnailSize/3 0;
-	// 			&:nth-of-type(1n) { margin-right: $thumbnailSize/3; }
-	// 			&:nth-of-type(5n) { margin-right: 0; }
-	// 			a img {
-	// 				width: $thumbnailSize;
-	// 				height: $thumbnailSize;
-	// 			}
-	// 		}
-	// 	}
-	// 	.active-image-wrapper-outer {
-	// 		width: calc(100% - (#{$thumbnailsWidth} + #{$thumbnailSize/3}));
-	// 	}
-	// } // MQ 2: 810px
-	//
-	// // MQ 3: 950px
-	// @media (min-width: 950px) {
-	// 	$thumbnailCount: 6;
-	// 	$thumbnailsWidth: calc((#{$thumbnailSize} * #{$thumbnailCount}) + ((#{$thumbnailSize}/3) * (#{$thumbnailCount} - 1)));
-	// 	.thumbnails {
-	// 		// border-top: 6px solid blue;
-	// 		min-width: $thumbnailsWidth;
-	// 		max-width: $thumbnailsWidth;
-	// 		margin: 0 $thumbnailSize/3;
-	// 		li	{
-	// 			width: $thumbnailSize;
-	// 			height: $thumbnailSize;
-	// 			margin: 0 $thumbnailSize/3 $thumbnailSize/3 0;
-	// 			&:nth-of-type(1n) { margin-right: $thumbnailSize/3; }
-	// 			&:nth-of-type(6n) { margin-right: 0; }
-	// 			a img {
-	// 				width: $thumbnailSize;
-	// 				height: $thumbnailSize;
-	// 			}
-	// 		}
-	// 	}
-	// 	.active-image-wrapper-outer {
-	// 		width: calc(100% - (#{$thumbnailsWidth} + #{$thumbnailSize/3}));
-	// 	}
-	// } // MQ 3: 950px
-
-
-	.img-fade-enter-active { transition: all .6s ease; }
-	.img-fade-leave-active { transition: all .6s ease-in-out; }
-
-	.img-fade-enter,
-	.img-fade-leave-to { opacity: 0; }
-
-	// .selected	{ /*margin-top: -3px; border: 3px solid #666; */ border: 3px solid #5ba1ff; border: 3px solid #fff; border: 1px dotted #000; }
-	// .selected a	{ color: #000; opacity: 1; }
+	@media all and (min-width: 390px) {
+		.collection-thumbnails {
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
+	} // min-width 390
 
 
 </style>

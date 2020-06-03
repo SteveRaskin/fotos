@@ -61,7 +61,7 @@ h1 .view-title::before {
   color: dimgray; }
 
 .collections-link {
-  color: lime;
+  color: royalblue;
   font-size: 1.5rem;
   cursor: pointer; }
 
@@ -71,7 +71,7 @@ a {
 
 a:active,
 a:focus {
-  outline: 1px dotted #ccc; }
+  outline: 0; }
 
 .main p {
   font-size: 1.35rem; }
@@ -145,12 +145,11 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 #app {
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 4.5%;
   flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: center;
-  border: 0px dotted lime; }
+  align-items: center; }
 
 /*
    <body>
@@ -161,14 +160,17 @@ body {
 	- - <footer>
 */
 .header {
-  display: none;
   position: fixed;
+  left: 0;
   top: 0;
-  height: 6rem;
-  padding: 0 4.5%;
+  display: flex;
+  width: 100%;
+  height: 18vw;
+  max-height: 6.9rem;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1.5% 0 4.5%;
   background: #454545;
   background: linear-gradient(180deg, #454545 0%, black 33%, black 66%, #454545 100%);
   z-index: 999; }
@@ -179,11 +181,17 @@ body {
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: flex-start;
-  margin-top: calc(6rem + 0px);
-  margin: 0;
-  padding: 3rem 0;
-  border: 0px dotted red; }
+  margin-top: 18vw;
+  padding: 1.5rem 0; }
 
+@media all and (min-width: 555px) {
+  .main {
+    margin-top: 6.9rem; } }
+@media all and (min-width: 780px) {
+  .header {
+    padding: 0 4.5%;
+    justify-content: space-between;
+    align-items: center; } }
 .footer {
   display: none;
   min-height: 6rem;
@@ -288,7 +296,8 @@ input[type="number"],
 input[type="password"],
 input[type="text"],
 input[type="time"],
-textarea {
+textarea,
+.search-submit {
   display: block;
   width: 100%;
   padding: 1.2rem .9rem;
@@ -302,7 +311,8 @@ input[type="email"],
 input[type="number"],
 input[type="password"],
 input[type="text"],
-input[type="time"] {
+input[type="time"],
+.search-submit {
   height: 2.7rem; }
 
 textarea {

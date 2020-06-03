@@ -1,17 +1,8 @@
 <template>
 
-	<div class="search-wrapper">
+	<div class="container search-results">
 
-		<router-link
-			tag="a"
-			class="collections-link"
-			:to="{ name: 'Collections', params: {} }"
-			tabindex="3"
-		>
-			&larr; back to the Collections
-		</router-link>
-
-		<app-search />
+		<app-search-form />
 
 		<div
 			class="search-results-wrapper"
@@ -45,7 +36,7 @@
 
    export default {
 		components: {
-			'app-search': SearchForm
+			'app-search-form': SearchForm
 		},
 		props: {
 		},
@@ -102,75 +93,54 @@
 		border-bottom: 1px solid lime;
 	}
 
-	.search-wrapper {
-		width: 100%;
-		// subheader has margin-bottom, so w/search, counter it here w/negative margin-top
-		margin: 1.5rem 0 1.5rem;
+	.search-results-wrapper {
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		align-items: center;
-		.search {
-			width: 100%;
-			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-between;
-			.search-input {
-				width: calc(100% - 15.6rem);
-			}
-			.search-submit {
-				width: 15rem;
-			}
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		width: 100%;
+		max-height: 0;
+		height: 0;
+		// overflow: hidden;
+		transition: .3s all ease-in-out;
+		&.open {
+			max-height: 999999vh;
+			height: auto;
 		}
-
-		.search-results-wrapper {
+		&.noresults {
+			max-height: 100vh;
+			height: auto;
+			padding: $space * 3 $space * 5;
+		}
+		.results-count {
+			display: block;
+			margin-bottom: .9rem;
+			font-weight: bold;
+		}
+		.search-results {
 			display: flex;
+			width: 100%;
 			flex-flow: column nowrap;
 			justify-content: flex-start;
-			width: 100%;
-			max-height: 0;
-			height: 0;
-			// overflow: hidden;
+			align-items: center;
+			margin: 0;
+			overflow: hidden;
 			transition: .3s all ease-in-out;
-			&.open {
-				max-height: 999999vh;
-				height: auto;
-			}
-			&.noresults {
-				max-height: 100vh;
-				height: auto;
-				padding: $space * 3 $space * 5;
-			}
-
-			.results-count {
-				display: block;
-				margin-bottom: .9rem;
-				font-weight: bold;
-			}
-			.search-results {
-				display: flex;
-				flex-flow: column nowrap;
-				justify-content: flex-start;
+			li {
 				width: 100%;
-				margin: 0;
-				overflow: hidden;
-				transition: .3s all ease-in-out;
-			}
-		} // .search-results-wrapper
-
-	   .search-results li {
-	      margin-bottom: .9rem;
-			padding: $space * 3;
-	      border: .15rem solid lighten($b, 9%);
-	      border-radius: .3rem;
-			transition: ease-in-out all .15s;
-			img {
-				display: block;
 				max-width: 750px;
-				margin: 0 auto;
+				margin: 0 auto 1.5rem;
+				border: .15rem solid lighten($b, 9%);
+				border-radius: .3rem;
+				transition: ease-in-out all .15s;
+				img {
+					display: block;
+					width: 100%;
+					max-width: 100%;
+					border: .75rem solid floralwhite;
+					border-radius: .15rem;
+				}
 			}
-	   }
-	} // .search-wrapper
-
+		}
+	} // .search-results-wrapper
 
 </style>
