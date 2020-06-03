@@ -4,14 +4,14 @@
 
 		<div class="hx-wrapper">
 			<h1>
-				<router-link
+				<!-- <router-link
 					tag="span"
 					class="collections-link"
 					:to="{ name: 'Collections', params: {} }"
 					tabindex="3"
 				>
 					Collections
-				</router-link>
+				</router-link> -->
 				<span class="view-title">
 					{{ displayName }}
 				</span>

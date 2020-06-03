@@ -9,14 +9,18 @@
 			</div>
 
 			<p class="welcome">
-				Welcome back to the Raskin's foto gallery!
+				Welcome back to the Raskin's foto gallery. Please have a quick read so you're aware of the changes.
 			</p>
 
 			<p class="welcome">
-				Some improvements have been made to the application, mainly a search function, which you'll see on the 'Collections' view, and a new 'Search Results' view. The search results are based on the image data 'tags' which are mostly names, ergo you'll get the most comprehensive results with name searches. There are a few other types of search that will also have results, e.g., "backyard", "birthday", "dinner", but evidently none of the tag data yet includes 'Bar Mitzvah', and the only city that returns results is Ottawa.
+				Mainly the updates are the search function, 'responsiveness' - meaning, deliberately various customizations of the layout when viewed on, e.g., a phone, tablet or desktop, - and the design of the Header. A click or tap on the camera, btw, will always bring you back to the 'Collections' view.
+			</p>
+
+			<p class="welcome">
+				Leaving this previous note: the search results are based on the image data 'tags' which are mostly names, ergo you'll get the most comprehensive results with name searches. There are a few other types of search that will also have results, e.g., "backyard", "birthday", "dinner", but evidently none of the tag data yet includes 'Bar Mitzvah', and the only city that returns results is Ottawa.
 			</p>
 			<p class="welcome">
-				Now that this functionality has been added, I can eventually add new data (images) at my earliest convenience. Also, still pending: some text corresponding to each collection, etc.
+				Pending: new data (images) at my earliest convenience, some text corresponding to each collection, etc.
 			</p>
 			<p class="welcome">
 				Apologies for the basic captions, and for any errors therein. Also I'm aware that there are some dubious groupings, and perhaps some incorrect dates - these type of errors are more likely in the older collections, because the image files' datestamps may have been overwritten when duplicated or moved.
@@ -31,7 +35,7 @@
 					in any collection, you can navigate the collection (the images) by either clicking on a thumbnail, clicking on the arrows overlaying the featured image, or simply by using your arrow keys
 				</li>
 				<li>
-					to return to the Collections list, click the word 'Collections' within any gallery
+					to return to the Collections list, click or tap the camera image in the header
 				</li>
 			</ul>
 

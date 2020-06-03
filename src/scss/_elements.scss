@@ -13,7 +13,7 @@ h6 { font-weight: normal; line-height: 1.11; }
 	width: 100%;
 	width: calc(100% + 1.5rem);
 	margin-bottom: 1.8rem;
-	border-bottom: 3px double floralwhite;
+	// border-bottom: 3px double floralwhite;
 }
 h1 .collections-link,
 h1 .view-title {
@@ -28,13 +28,13 @@ h1 .collections-link {
 h1 .view-title {
 	text-transform: capitalize;
 }
-h1 .view-title::before {
-	display: inline-block;
-	padding: 0 .9rem;
-	// content: "|";
-	content: ">";
-	color: darken(gainsboro, 45%);
-}
+// h1 .view-title::before {
+// 	display: inline-block;
+// 	padding: 0 .9rem;
+// 	// content: "|";
+// 	content: ">";
+// 	color: darken(gainsboro, 45%);
+// }
 
 
 .collections-link {
