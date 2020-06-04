@@ -6,6 +6,7 @@ export default {
 			this.$store.commit("setSearchTerm", term);
 
 			let searchResults = [];
+			let availSearchTerms = [];
 
 			this.collectionFiles.forEach((collectionFile, i) => {
 				collectionFile.filter((imgObj) => {
@@ -16,11 +17,22 @@ export default {
 						searchResult.imgFile = imgObj.imgFile;
 						searchResult.metadata = imgObj.metadata;
 						searchResults.push(searchResult);
-					};
+					}
+					else {
+						imgObj.tags.forEach((tag) => {
+							if (availSearchTerms.includes(tag) === false) {
+								availSearchTerms.push(tag);
+							}
+						})
+					}
 				});
 			}); // this.collectionFiles.forEach
+
+			availSearchTerms.sort();
 			this.$store.commit("setSearchResults", searchResults);
-			this.searchResults = searchResults; // ?
+			this.$store.commit("setAvailSearchTerms", availSearchTerms);
+			this.searchTerm = this.$store.state.searchTerm;
+			// this.searchResults = searchResults; // ?
 		} // doSearch
 	} // methods
 }

@@ -1,110 +1,39 @@
 [
 	{
-		"data": "family_2006.09_toronto_ottawa",
-		"displayName": "2006.09; robbie's bar mitzvah",
-		"abstract": "family pics, toronto (robbie's bar mitzvah), ottawa",
-		"path": "family"
+		"data": "bugs",
+		"displayName": "bugs",
+		"abstract": "butterflies mostly, in new york and in virginia",
+		"path": ""
 	},
 	{
-		"data": "family_2007.07",
-		"displayName": "2007.07",
-		"abstract": "family pics, july 2007",
-		"path": "family"
+		"data": "cory's_menagerie",
+		"displayName": "cory's menagerie",
+		"abstract": "cory cordes' reptile zoo",
+		"path": ""
 	},
 	{
-		"data": "family_2008.12_florida",
-		"displayName": "chanukah 2008, boca",
-		"abstract": "chanukah 2008, boca raton, florida",
-		"path": "family"
+		"data": "flowers_nyc",
+		"displayName": "flowers (New York City)",
+		"abstract": "flora, photographed mostly in wagner park, new york city",
+		"path": ""
 	},
 	{
-		"data": "family_2009.11",
-		"displayName": "2009.11",
-		"abstract": "family pics, november 2009",
-		"path": "family"
+		"data": "flowers_vancouver",
+		"displayName": "flowers (Vancouver)",
+		"abstract": "flora, photographed in strathcona community gardens and other locales in vancouver",
+		"path": ""
 	},
 	{
-		"data": "family_2011.04",
-		"displayName": "2011.04",
-		"abstract": "family pics, april 2004 (mostly noah's bar mitzvah)",
-		"path": "family"
+		"data": "food",
+		"displayName": "food",
+		"abstract": "food stylist's portfolio",
+		"path": ""
 	},
 	{
-		"data": "family_2012.07",
-		"displayName": "2012.07",
-		"abstract": "family pics, july 2012",
-		"path": "family"
-	},
-	{
-		"data": "family_2013.07",
-		"displayName": "2013.07",
-		"abstract": "family pics, july 2013 (mostly in nyc)",
-		"path": "family"
-	},
-	{
-		"data": "family_2014.01_florida",
-		"displayName": "2014.01, 02",
-		"abstract": "family pics, january, february 2014 (in florida re: mom's birthday)",
-		"path": "family"
-	},
-	{
-		"data": "family_2014.05_aj_bar_mitzvah",
-		"displayName": "2014.05: Adam's Bar Mitzvah",
-		"abstract": "family pics, 2014.05: Adam's Bar Mitzvah",
-		"path": "family"
-	},
-	{
-		"data": "family_2014.07_syracuse",
-		"displayName": "2014.07; meet-up in Syracuse",
-		"abstract": "family pics, 2014.07; Raskin meet-up in Syracuse NY",
-		"path": "family"
-	},
-	{
-		"data": "family_2014.08_ottawa",
-		"displayName": "2014.08; Ottawa",
-		"abstract": "family, 2014.08; Ottawa",
-		"path": "family"
-	},
-	{
-		"data": "family_2015.07_ottawa",
-		"displayName": "2015.07; Ottawa",
-		"abstract": "family, 2015.07; Ottawa",
-		"path": "family"
-	},
-	{
-		"data": "family_2015.09_ottawa",
-		"displayName": "2015.09; Ottawa",
-		"abstract": "family, 2015.09; Ottawa",
-		"path": "family"
-	},
-	{
-		"data": "family_2016.01_florida",
-		"displayName": "2016.01; Florida",
-		"abstract": "family, 2016.01; Florida",
-		"path": "family"
-	},
-	{
-		"data": "family_2016.09_ottawa",
-		"displayName": "2016.09; Ottawa",
-		"abstract": "family, 2016.09; Ottawa",
-		"path": "family"
-	},
-	{
-		"data": "family_2017.07_ottawa",
-		"displayName": "2017.07; Ottawa",
-		"abstract": "family, 2017.07; Ottawa",
-		"path": "family"
-	},
-	{
-		"data": "family_2018.07_ottawa_dad's_90th_birthday",
-		"displayName": "2018.07; Dad's 90th Birthday",
-		"abstract": "family, 2017.07; Ottawa; Dad's 90th Birthday",
-		"path": "family"
-	},
-	{
-		"data": "family_2018.07.18_ottawa_old_quarry_trail",
-		"displayName": "2018.07.18; Ottawa",
-		"abstract": "family, 2017.07.18; Ottawa; Ma & Pa on the Old Quarry Trail",
-		"path": "family"
+		"data": "hurricane_sandy",
+		"displayName": "hurricane sandy",
+		"abstract": "a few pics shot around the neighborhood following hurricane sandy",
+		"path": ""
 	}
 ]
+

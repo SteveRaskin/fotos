@@ -10,7 +10,7 @@
 				<img class="letter" :src="require(`@/assets/img/F_90x120.png`)" alt="F" />
 				<img class="letter" :src="require(`@/assets/img/O_fire_111x120.png`)" alt="O" />
 				<img class="letter" :src="require(`@/assets/img/T_90x120.png`)" alt="T" />
-				<img class="letter" :src="require(`@/assets/img/O_neon_90x120.png`)" alt="O" />
+				<img class="letter" :src="require(`@/assets/img/O_120x_luis_villasmil_b.png`)" alt="O" />
 				<img class="letter" :src="require(`@/assets/img/S_stones_111x120.png`)" alt="S" />
 			</router-link>
 		</h1>

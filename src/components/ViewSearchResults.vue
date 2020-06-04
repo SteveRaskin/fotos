@@ -8,19 +8,36 @@
 			class="search-results-wrapper"
 			v-bind:class="[{ open: searchResults.length > 0 }, { noresults: searchResults.length < 1 }]"
 		>
-			<h4 class="results-count" v-if="searchResults.length == 0">
-				no results matching "{{ titleCase(searchTerm) }}":
-			</h4>
-			<h4 class="results-count" v-if="searchResults.length > 0">
-				{{ searchResults.length }} result<span v-if="searchResults.length > 1">s</span> matching search "{{ titleCase(searchTerm) }}":
-			</h4>
 
-			<ul class="search-results">
-				<li v-for="(imgObj, ix) in searchResults" :key="ix">
-					<p>{{ imgObj.metadata }}</p>
-					<img :src="require('@/assets/img/collections/' + imgObj.path + '/' + imgObj.data + '/' + imgObj.imgFile)" alt="" />
-				</li>
-			</ul>
+			<div class="no-search-results" v-if="searchResults.length == 0 && availSearchTerms.length">
+				<h4 class="results-count" >
+					no results matching "{{ titleCase(getSearchTerm) }}". Maybe try searching for one of these terms:
+				</h4>
+				<ul>
+					<li
+						class="search-term"
+						v-for="(term, ix) in availSearchTerms" v-bind:key="ix"
+						@click="doSearch(term)"
+					>{{ term }}</li>
+				</ul>
+			</div>
+
+			<div class="pos-search-results">
+				<h4 class="results-count" v-if="searchResults.length">
+					{{ searchResults.length }} result<span v-if="searchResults.length > 1">s</span> matching search "{{ titleCase(searchTerm) }}":
+				</h4>
+
+				<ul class="search-results">
+					<li v-for="(imgObj, ix) in searchResults" :key="ix">
+						<p>{{ imgObj.metadata }}</p>
+						<!-- family site -->
+						<img v-if="(imgObj.path.length)" :src="require('@/assets/img/collections/' + imgObj.path + '/' + imgObj.data + '/' + imgObj.imgFile)" alt="" />
+						<!-- OTL pofo -->
+						<img v-if="(!imgObj.path.length)" :src="require('@/assets/img/collections/' + imgObj.data + '/' + imgObj.imgFile)" alt="" />
+					</li>
+				</ul>
+			</div>
+
 		</div>
 
 	</div><!-- END .search-wrapper -->
@@ -43,7 +60,8 @@
 		},
       data() {
          return {
-				searchTerm: "",
+				searchTerm: this.getSearchTerm,
+				availSearchTerms: []
          }
     	},
 		created: function() {
@@ -52,11 +70,16 @@
 			this.$store.state.collectionFiles.length ? this.collectionFiles = this.$store.state.collectionFiles : this.collectionFiles = JSON.parse(localStorage.getItem("collectionFiles")); // string-to-object to get values
 
 			// for the template
-			this.searchTerm = this.$route.params.searchTerm;
+			// this.searchTerm = this.$route.params.searchTerm;
+
+			this.$store.state.searchTerm ? this.searchTerm = this.$store.state.searchTerm : this.searchTerm = localStorage.getItem("searchTerm");
+
+			this.$store.state.availSearchTerms.length ? this.availSearchTerms = this.$store.state.availSearchTerms : this.availSearchTerms = JSON.parse(localStorage.getItem("availSearchTerms"));
 		},
 		beforeRouteUpdate(to, from, next) {
 			next();
-			this.searchTerm = this.$route.params.searchTerm;
+			// this.searchTerm = this.$route.params.searchTerm;
+			this.searchTerm = this.$store.state.searchTerm;
 			this.doSearch(this.searchTerm);
 		},
 		computed: {

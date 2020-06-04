@@ -34,6 +34,14 @@ catch (e) {
 	initialSearchResults = []
 }
 
+let initialAvailSearchTerms;
+try {
+	initialAvailSearchTerms = JSON.parse(localStorage.getItem("availSearchTerms"))
+}
+catch (e) {
+	console.warn("no search terms in localStorage")
+	initialAvailSearchTerms = []
+}
 
 
 export default new Vuex.Store({
@@ -46,7 +54,8 @@ export default new Vuex.Store({
 		selectedCollection: null,
 		ixSelected: null, // nis
 		searchTerm: "",
-		searchResults: initialSearchResults
+		searchResults: initialSearchResults,
+		availSearchTerms: initialAvailSearchTerms
 	},
 	mutations: {
 		setCollectionList(state, payload) { // per action
@@ -72,6 +81,10 @@ export default new Vuex.Store({
 		setSearchResults(state, payload) {
 			state.searchResults = payload;
 			localStorage.setItem("searchResults", JSON.stringify(payload));
+		},
+		setAvailSearchTerms(state, payload) {
+			state.availSearchTerms = payload;
+			localStorage.setItem("availSearchTerms", JSON.stringify(payload));
 		},
 	},
 	getters: { // getters: state is 1st arg

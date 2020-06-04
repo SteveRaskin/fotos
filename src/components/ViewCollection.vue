@@ -23,13 +23,25 @@
 
 			<ul class="thumbnails">
 				<li v-for="obj in collection" v-bind:key="obj.id" :class="{ 'selected': obj.id == objID }">
+					<!-- family site -->
 					<a
+						v-if="(collectionGroup.length)"
 						href="#"
 						:title="obj.metadata"
 						@click="updateObjId(obj.id)"
 						>
 						<img :src="require(`@/assets/img/collections/${collectionGroup}/${imgDir}/${obj.imgFile}`)" />
 					</a>
+
+					<!-- OTL pofo -->
+					<a
+						href="#"
+						:title="obj.metadata"
+						@click="updateObjId(obj.id)"
+						>
+						<img :src="require(`@/assets/img/collections/${imgDir}/${obj.imgFile}`)" />
+					</a>
+
 					<p>{{ obj.imgFile }}</p>
 				</li>
 			</ul>
@@ -62,7 +74,9 @@
 							</svg>
 						</button>
 
+						<!-- family site has collectionGroup -->
 						<img
+							v-if="(collectionGroup.length)"
 							ref="activeImage"
 							class="active-image"
 							:src="require(`@/assets/img/collections/${collectionGroup}/${imgDir}/${collection[objID].imgFile}`)"
@@ -70,6 +84,17 @@
 							@load="updateImgDims"
 							:style="imgStyle"
 						/>
+
+						<!-- OTL pofo -->
+						<img
+							ref="activeImage"
+							class="active-image"
+							:src="require(`@/assets/img/collections/${imgDir}/${collection[objID].imgFile}`)"
+							:alt="objID"
+							@load="updateImgDims"
+							:style="imgStyle"
+						/>
+
 					</div><!-- .active-image-wrapper-inner -->
 				</div><!-- .active-image-wrapper-outer -->
 			</transition>
@@ -97,7 +122,7 @@
 				displayName: "",
 				abstract: "",
 
-				collectionName: null,
+				collectionName: "",
 				dataFile: null,
 				collectionLength: 0,
 				objID: 0,
@@ -134,8 +159,11 @@
 
 			this.displayName = this.collectionObj.displayName;
 			this.abstract = this.collectionObj.abstract;
-			this.collectionGroup = this.collectionObj.path;
+			// this.collectionGroup = this.collectionObj.path; // family site √
+			this.collectionObj.path.length ? this.collectionGroup = this.collectionObj.path : this.collectionGroup = "";
 			this.imgDir = this.collectionObj.data;
+			console.log("this.collectionObj.data", this.collectionObj.data);
+			console.log("this.imgDir", this.imgDir);
 
 			this.$store.state.selectedCollection ? this.collection = this.$store.state.selectedCollection : this.collection = JSON.parse(localStorage.getItem("selectedCollection")); // string-to-object to get values
 

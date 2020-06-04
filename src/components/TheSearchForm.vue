@@ -9,7 +9,7 @@
 				type="text"
 				class="search-input"
 				v-model="searchTerm"
-				placeholder="search by name, occasion"
+				placeholder="search"
 			/>
 
 			<!-- TODO: replace with native button? w/$route, name param in mixin? -->
@@ -81,9 +81,6 @@
 		display: block;
 		width: 100%;
 		margin: 0 0 1.5rem;
-		// flex-flow: row wrap;
-		// justify-content: space-between;
-		// align-items: center;
 		.search { // form.search
 			width: 100%;
 			display: flex;

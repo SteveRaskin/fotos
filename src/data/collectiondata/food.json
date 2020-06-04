@@ -1,0 +1,353 @@
+[
+	{
+		"imgFile": "apple_cutlery_glasses_tray.jpg",
+		"metadata": "apple, cutlery, glasses, tray",
+		"tags": [ "apple", "cutlery", "glasses", "tray" ]
+	},
+	{
+		"imgFile": "apples_and_cream.jpg",
+		"metadata": "apples, cream",
+		"tags": [ "apples", "apple", "cream" ]
+	},
+	{
+		"imgFile": "apples_baskets.jpg",
+		"metadata": "apples, baskets",
+		"tags": [ "apples", "apple", "baskets" ]
+	},
+	{
+		"imgFile": "apples_paring_knife.jpg",
+		"metadata": "apples, paring, knife",
+		"tags": [ "apples", "apple", "paring", "knife" ]
+	},
+	{
+		"imgFile": "beer_1.jpg",
+		"metadata": "beer",
+		"tags": [ "beer" ]
+	},
+	{
+		"imgFile": "beer_glass_sandwich_bacon_tomato_lettuce.jpg",
+		"metadata": "beer, glass, sandwich, bacon, tomato, lettuce",
+		"tags": [ "beer", "glass", "sandwich", "bacon", "tomato", "lettuce" ]
+	},
+	{
+		"imgFile": "beer_pistachios.jpg",
+		"metadata": "beer, pistachios",
+		"tags": [ "beer", "pistachios" ]
+	},
+	{
+		"imgFile": "breakfast_bread_butter_jam.jpg",
+		"metadata": "breakfast, bread, butter, jam",
+		"tags": [ "breakfast", "bread", "butter", "jam" ]
+	},
+	{
+		"imgFile": "breakfast_juice_coffee_pastry_strawberries.jpg",
+		"metadata": "breakfast, juice, coffee, pastry, strawberries",
+		"tags": [ "breakfast", "juice", "coffee", "pastry", "strawberries", "strawberry" ]
+	},
+	{
+		"imgFile": "cheese_grapes.jpg",
+		"metadata": "cheese, grapes",
+		"tags": [ "cheese", "grapes", "grape" ]
+	},
+	{
+		"imgFile": "chinatown_lychees_cream.jpg",
+		"metadata": "chinatown lychees, cream",
+		"tags": [ "chinatown", "lychees", "lychee", "cream" ]
+	},
+	{
+		"imgFile": "chinatown_noodles.jpg",
+		"metadata": "chinatown noodles",
+		"tags": [ "chinatown", "noodles", "noodle" ]
+	},
+	{
+		"imgFile": "chinatown_peking_duck.jpg",
+		"metadata": "chinatown peking, duck",
+		"tags": [ "chinatown", "peking duck", "peking", "duck" ]
+	},
+	{
+		"imgFile": "chinatown_shrimp_rice.jpg",
+		"metadata": "chinatown shrimp, rice",
+		"tags": [ "chinatown", "shrimp", "rice" ]
+	},
+	{
+		"imgFile": "chinatown_soup_chopsticks_mung_bean_noodles.jpg",
+		"metadata": "chinatown soup, chopsticks, mung, bean, noodles",
+		"tags": [ "chinatown", "soup", "chopsticks", "chopstick", "mung bean", "mung", "bean", "noodles", "noodle" ]
+	},
+	{
+		"imgFile": "chocolate_bark_almonds_walnuts.jpg",
+		"metadata": "chocolate bark, almonds, walnuts",
+		"tags": [ "chocolate", "bark", "almonds", "almond", "walnuts", "walnut" ]
+	},
+	{
+		"imgFile": "chocolate_guatemalan.jpg",
+		"metadata": "chocolate",
+		"tags": [ "chocolate" ]
+	},
+	{
+		"imgFile": "chocolate.jpg",
+		"metadata": "chocolate",
+		"tags": [ "chocolate" ]
+	},
+	{
+		"imgFile": "coconut_cake.jpg",
+		"metadata": "coconut cake",
+		"tags": [ "coconut cake", "coconut", "cake" ]
+	},
+	{
+		"imgFile": "cookies_1.jpg",
+		"metadata": "cookies",
+		"tags": [ "cookies", "cookie" ]
+	},
+	{
+		"imgFile": "cookies_2.jpg",
+		"metadata": "cookies",
+		"tags": [ "cookies", "cookie" ]
+	},
+	{
+		"imgFile": "cookies_3.jpg",
+		"metadata": "cookies",
+		"tags": [ "cookies", "cookie" ]
+	},
+	{
+		"imgFile": "cookies_4.jpg",
+		"metadata": "cookies",
+		"tags": [ "cookies", "cookie" ]
+	},
+	{
+		"imgFile": "eggs_in_a_bowl_salt.jpg",
+		"metadata": "eggs in a bowl, salt",
+		"tags": [ "eggs", "egg", "bowl", "salt" ]
+	},
+	{
+		"imgFile": "fettucine_artichokes_oyster_mushrooms_tomatoes.jpg",
+		"metadata": "fettucine, artichokes, oyster, mushrooms, tomatoes",
+		"tags": [ "fettucine", "artichokes", "artichoke", "oyster mushrooms", "oyster", "mushrooms", "mushroom", "tomatoes", "tomato" ]
+	},
+	{
+		"imgFile": "glazed_plums.jpg",
+		"metadata": "glazed, plums",
+		"tags": [ "plums", "plum" ]
+	},
+	{
+		"imgFile": "gourds_beans_starfruit.jpg",
+		"metadata": "gourds, beans, starfruit",
+		"tags": [ "gourds", "gourd", "beans", "bean", "starfruit" ]
+	},
+	{
+		"imgFile": "grapefruit_1.jpg",
+		"metadata": "grapefruit",
+		"tags": [ "grapefruit" ]
+	},
+	{
+		"imgFile": "grapefruit_walnuts.jpg",
+		"metadata": "grapefruit, walnuts",
+		"tags": [ "grapefruit", "walnuts", "walnut" ]
+	},
+	{
+		"imgFile": "grapes.jpg",
+		"metadata": "grapes",
+		"tags": [ "grapes", "grape" ]
+	},
+	{
+		"imgFile": "indian_buffet_1.jpg",
+		"metadata": "indian buffet",
+		"tags": [ "indian", "buffet" ]
+	},
+	{
+		"imgFile": "indian_curry_cauliflower.jpg",
+		"metadata": "indian curry with cauliflower",
+		"tags": [ "indian", "curry", "cauliflower" ]
+	},
+	{
+		"imgFile": "indian_mango_lassi.jpg",
+		"metadata": "indian mango lassi",
+		"tags": [ "indian", "mango", "lassi" ]
+	},
+	{
+		"imgFile": "indian_papadum.jpg",
+		"metadata": "indian papadum",
+		"tags": [ "indian", "papadum" ]
+	},
+	{
+		"imgFile": "indian_spicetray.jpg",
+		"metadata": "indian spicetray",
+		"tags": [ "indian", "spices", "spice" ]
+	},
+	{
+		"imgFile": "olives.jpg",
+		"metadata": "olives",
+		"tags": [ "olives", "olive" ]
+	},
+	{
+		"imgFile": "orange_lime_onion_mango_garlic_bowl.jpg",
+		"metadata": "orange, lime, onion, mango, garlic, bowl",
+		"tags": [ "orange", "lime", "onion", "mango", "garlic", "bowl" ]
+	},
+	{
+		"imgFile": "orange_tart.jpg",
+		"metadata": "orange tart",
+		"tags": [ "orange", "tart" ]
+	},
+	{
+		"imgFile": "pancakes_blueberries_raspberries_cream.jpg",
+		"metadata": "pancakes, blueberries, raspberries, cream",
+		"tags": [ "pancakes", "pancake", "blueberries", "blueberry", "raspberries", "raspberry", "cream" ]
+	},
+	{
+		"imgFile": "peach_pie_1.jpg",
+		"metadata": "peach pie",
+		"tags": [ "peach", "pie" ]
+	},
+	{
+		"imgFile": "peach_pie_2.jpg",
+		"metadata": "peach pie",
+		"tags": [ "peach", "pie" ]
+	},
+	{
+		"imgFile": "polenta_chard_canapes.png",
+		"metadata": "polenta, chard, canapes.png",
+		"tags": [ "polenta", "chard", "canapes", "canape" ]
+	},
+	{
+		"imgFile": "porridge_raspberries_walnuts.jpg",
+		"metadata": "porridge, raspberries, walnuts",
+		"tags": [ "porridge", "raspberries", "raspberry", "walnuts", "walnut" ]
+	},
+	{
+		"imgFile": "potatoes.jpg",
+		"metadata": "potatoes",
+		"tags": [ "potatoes", "potato" ]
+	},
+	{
+		"imgFile": "prosciutto_cheese.jpg",
+		"metadata": "prosciutto, cheese",
+		"tags": [ "prosciutto", "cheese" ]
+	},
+	{
+		"imgFile": "roasted_figs_and_cream.jpg",
+		"metadata": "roasted figs, cream",
+		"tags": [ "figs", "fig", "cream" ]
+	},
+	{
+		"imgFile": "salad_olive_oil.png",
+		"metadata": "salad, olive, oil.png",
+		"tags": [ "salad", "olive", "oil" ]
+	},
+	{
+		"imgFile": "salami_bread.jpg",
+		"metadata": "salami, bread",
+		"tags": [ "salami", "bread" ]
+	},
+	{
+		"imgFile": "salami_prosciutto_wine.jpg",
+		"metadata": "salami, prosciutto, wine",
+		"tags": [ "salami", "prosciutto", "wine" ]
+	},
+	{
+		"imgFile": "salami_sausage.jpg",
+		"metadata": "salami, sausage",
+		"tags": [ "salami", "sausage" ]
+	},
+	{
+		"imgFile": "salumeria.jpg",
+		"metadata": "salumeria",
+		"tags": [ "salumeria", "salami", "sausage" ]
+	},
+	{
+		"imgFile": "sandwich.jpg",
+		"metadata": "sandwich",
+		"tags": [ "sandwich" ]
+	},
+	{
+		"imgFile": "scallops_mushrooms.jpg",
+		"metadata": "scallops, mushrooms",
+		"tags": [ "scallops", "scallop", "mushrooms", "mushroom" ]
+	},
+	{
+		"imgFile": "scallops_sage.jpg",
+		"metadata": "scallops, sage",
+		"tags": [ "scallops", "scallop", "sage" ]
+	},
+	{
+		"imgFile": "shrimp_chips_bubbletea.jpg",
+		"metadata": "shrimp chips, bubbletea",
+		"tags": [ "shrimp", "chips", "chip", "bubble tea", "bubbles", "bubble", "tea" ]
+	},
+	{
+		"imgFile": "soynuts.jpg",
+		"metadata": "soynuts",
+		"tags": [ "soynuts", "soynut" ]
+	},
+	{
+		"imgFile": "squash_blossums.jpg",
+		"metadata": "squash blossums",
+		"tags": [ "squash", "blossums", "blossum" ]
+	},
+	{
+		"imgFile": "tea_honey_cookie.jpg",
+		"metadata": "tea, honey, cookie",
+		"tags": [ "tea", "honey", "cookie" ]
+	},
+	{
+		"imgFile": "toast_bacon_eggs.jpg",
+		"metadata": "toast, bacon, eggs",
+		"tags": [ "toast", "bacon", "eggs", "egg" ]
+	},
+	{
+		"imgFile": "toast_red_pepper_omelet.jpg",
+		"metadata": "toast, red pepper omelet",
+		"tags": [ "toast", "red bell pepper", "bell pepper", "pepper", "omelet" ]
+	},
+	{
+		"imgFile": "tomatoes_sea_salt.jpg",
+		"metadata": "tomatoes, sea salt",
+		"tags": [ "tomatoes", "tomato", "salt" ]
+	},
+	{
+		"imgFile": "tomatoes_zucchini_peppers_brussels_sprouts_tarragon_mustard.jpg",
+		"metadata": "tomatoes, zucchini, peppers, brussels, sprouts, tarragon, mustard",
+		"tags": [ "tomatoes", "tomato", "zucchini", "peppers", "pepper", "brussels sprouts", "tarragon", "mustard" ]
+	},
+	{
+		"imgFile": "verrine_salmon_avocado_champagne.png",
+		"metadata": "verrine, salmon, avocado, champagne",
+		"tags": [ "verrine", "salmon", "avocado", "champagne" ]
+	},
+	{
+		"imgFile": "verrines_salmon_avocado.png",
+		"metadata": "verrines, salmon, avocado",
+		"tags": [ "verrines", "verrine", "salmon", "avocado" ]
+	},
+	{
+		"imgFile": "vodka_glass_bird.jpg",
+		"metadata": "vodka, glass, bird",
+		"tags": [ "vodka", "glass", "bird" ]
+	},
+	{
+		"imgFile": "wheat_barley.jpg",
+		"metadata": "wheat, barley",
+		"tags": [ "wheat", "barley", "grains", "grain" ]
+	},
+	{
+		"imgFile": "wine_glass_cork.jpg",
+		"metadata": "wine, glasses, cork",
+		"tags": [ "wine", "glasses", "cork" ]
+	},
+	{
+		"imgFile": "yogurt_cereal_pomegranates.jpg",
+		"metadata": "yogurt, cereal, pomegranates",
+		"tags": [ "yogurt", "cereal", "pomegranates" ]
+	},
+	{
+		"imgFile": "yogurt_fruit_and_nut_parfait.jpg",
+		"metadata": "yogurt, fruit, nut, parfait",
+		"tags": [ "yogurt", "fruit", "nut", "parfait" ]
+	},
+	{
+		"imgFile": "zucchini_blossums.jpg",
+		"metadata": "zucchini, blossums",
+		"tags": [ "zucchini", "blossum" ]
+	}
+]
+
