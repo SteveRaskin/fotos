@@ -22,7 +22,7 @@
 				}"
 				@click.native="doSearch(searchTerm)"
 				>
-				<span v-if="searchTerm">find pics of <span>'{{ searchTerm }}'</span></span>
+				<span v-if="searchTerm">find <span>'{{ searchTerm }}'</span></span>
 				<span v-else>find pics</span>
 			</router-link>
 
@@ -87,12 +87,10 @@
 			flex-flow: row wrap;
 			justify-content: space-between;
 			.search-input {
-				width: calc(100% - 15.6rem);
 				width: 100%;
 				margin-bottom: .9rem;
 			}
 			.search-submit {
-				width: 15rem;
 				width: 100%;
 				display: flex;
 				align-items: center;
@@ -108,11 +106,13 @@
 			.search { // form.search
 				flex-flow: row nowrap;
 				.search-input {
-					width: calc(100% - 15rem);
-					margin: 0;
+					flex-grow: 1;
+					flex-shrink: 1;
+					margin-right: 1.5%;
 				}
 				.search-submit {
-					width: 13.5rem;
+					flex-grow: 1;
+					flex-shrink: 2;
 				}
 			}
 		}

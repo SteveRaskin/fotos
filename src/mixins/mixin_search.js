@@ -1,10 +1,10 @@
 export default {
-	created: function() {},
+	created: function() {
+	},
 	methods: {
 		doSearch: function(term) {
 			const searchTerm = term.toLowerCase();
 			this.$store.commit("setSearchTerm", term);
-
 			let searchResults = [];
 			let availSearchTerms = [];
 

@@ -13,11 +13,11 @@
 				<h4 class="results-count" >
 					no results matching "{{ titleCase(getSearchTerm) }}". Maybe try searching for one of these terms:
 				</h4>
-				<ul>
+				<ul class="search-terms">
 					<li
 						class="search-term"
 						v-for="(term, ix) in availSearchTerms" v-bind:key="ix"
-						@click="doSearch(term)"
+						@click="updateRouteParam(term)"
 					>{{ term }}</li>
 				</ul>
 			</div>
@@ -78,8 +78,8 @@
 		},
 		beforeRouteUpdate(to, from, next) {
 			next();
-			// this.searchTerm = this.$route.params.searchTerm;
-			this.searchTerm = this.$store.state.searchTerm;
+			this.searchTerm = this.$route.params.searchTerm;
+			// this.searchTerm = this.$store.state.searchTerm;
 			this.doSearch(this.searchTerm);
 		},
 		computed: {
@@ -101,6 +101,14 @@
 			}
 		},
 		mounted: function() {},
+		methods: {
+			updateRouteParam: function(term) {
+				this.$router.replace({
+					params: { searchTerm: term },
+				})
+				this.doSearch(term);
+			}
+		},
 		mixins: [ Search, TitleCase ]
    }
 </script>
@@ -116,6 +124,21 @@
 	.collections-link:hover {
 		border-bottom: 1px solid lime;
 	}
+
+	.search-terms {
+		width: 100%;
+		columns: 15.3rem auto;
+		li {
+			color: royalblue;
+			border-bottom: 1px dotted royalblue;
+			&:hover {
+				color: floralwhite;
+				border-bottom: 1px solid floralwhite;
+				cursor: pointer;
+			}
+		}
+	}
+
 
 	.search-results-wrapper {
 		display: flex;
