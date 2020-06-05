@@ -162,8 +162,6 @@
 			// this.collectionGroup = this.collectionObj.path; // family site √
 			this.collectionObj.path.length ? this.collectionGroup = this.collectionObj.path : this.collectionGroup = "";
 			this.imgDir = this.collectionObj.data;
-			console.log("this.collectionObj.data", this.collectionObj.data);
-			console.log("this.imgDir", this.imgDir);
 
 			this.$store.state.selectedCollection ? this.collection = this.$store.state.selectedCollection : this.collection = JSON.parse(localStorage.getItem("selectedCollection")); // string-to-object to get values
 
