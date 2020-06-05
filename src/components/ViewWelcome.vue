@@ -11,49 +11,47 @@
 			<div class="welcome">
 
 				<p>
-					<b>'Fotos' is another application built using Vue.js, and incorporating state management via Vuex</b>.
+					<b>'Fotos' is another application built using Vue.js, incorporating state management (Vuex), and local storage</b>.
 				</p>
 
 				<p>
-					Sometime ago I built a small site which mainly comprised an image gallery. In my ongoing work with Vue.js, I had an idea to re-purpose that site, expanding it so that it could instead be a <i>collection</i> of photo galleries, make it dynamic, and searchable.
+					Sometime ago I built a small site which mainly comprised an image gallery. In my ongoing work with Vue.js, I had an idea to re-purpose that site, expanding it so that it would instead feature a <i><b>collection</b></i> of photo galleries. It had to be <b>dynamic</b>, <b>responsive</b>, <b>extensible</b>, and provide a <b>search function</b>. Beyond that, my objective in building this application was to get my feet wet with <b>Vuex</b>.
 				</p>
 
 				<p>
-					'Fotos' is the result of that effort. I opted to forgo Firebase this time, mainly because one of my prime objectives in building this application was to get my feet wet with Vuex. So the data is all in .json files.
+					And since I wanted to have the views - especially search results - survive a refresh, I invited <b>local storage</b> to the party (shortly after which <b>.htaccess</b> <i>crashed</i> the party).
 				</p>
+
+				<p><b>'Fotos'</b> is the result of that effort.</p>
 
 				<p>
-					Speaking of which, here's what's happening: when the Collections view loads, a .json file - a manifest, so to speak - referencing the various collections, is loaded, assigned to the Vuex store, and iterated to generate the collection cards. The objects in this manifest .json hold, among other values, the path of each collection's .json data, and a value which is used as a route parameter. This architecture makes it very easy to add galleries to the application.
+					Navigating the app is pretty straightforward:
 				</p>
-
-				<p>
-					(And just for a little variety - and because I'm a bit of a random junkie, I added some logic to the Collections view so that, rather than using a pre-selected placeholder for each collection card, an image is randomly selected from each collection for use in a collection card. You can see this in action by refreshing the Collections view.)
-				</p>
-
-				<p>
-					Each of the collection .json files' objects hold the file path, metadata (used as a caption), and a tags array corresponding to each image. Both the metadata and the tags array are used by the search function.
-				</p>
-
-				<p>
-					I wanted very much to have the views - especially search results - survive a refresh, so I opted to 'back up' the $store with local storage &hellip; and then I <i>still</i> had to dance with .htaccess.
-				</p>
-
-				<ul>
+				<ul class="how-to">
 					<li>
-						in any collection, you can navigate the collection (i.e., the images) by either clicking on a thumbnail, clicking on the arrows overlaying the featured image, or by using your arrow keys;
+						<b>click or tap the camera image in the header</b> to load the Collections list view;
 					</li>
 					<li>
-						to return to the Collections list, click or tap the camera image in the header;
+						<b>in a collection</b>, navigate the images either by clicking/tapping on a <b>thumbnail</b>, clicking/tapping on the <b>arrows overlaying the featured image</b>, or by <b>using your arrow keys</b>;
+					</li>
+					<li>
+						<b>as to the search function</b> (Collections view): well, how would you know what to search for? Try searching for <i><b>*anything*</b></i> &hellip;
 					</li>
 				</ul>
 
 				<p>
-					more collections to come &hellip;
-				</p>
-				<p>
-					sr
+					Questions or comments? <a v-bind:href="emailAddress" v-bind:title="emailAddress">{{ emailText }}</a>
 				</p>
 
+				<p>
+					<a href="https://github.com/SteveRaskin/fotos" title="fotos on github" target="_blank">
+						'fotos' code on github
+					</a>
+				</p>
+
+				<p>
+					<b>sr</b>
+				</p>
 
 				<router-link
 					tag="a"
@@ -65,11 +63,10 @@
 				</router-link>
 
 
-
 				<div class="credits">
 
 					<p>
-						P.S. shout-outs to the various photographers whose work I found on <a href="http://unsplash.com" title="unsplash.com" target="_blank">unsplash.com</a>, used in the header:
+						P.S. shout-outs to the photographers whose work I found on <a href="http://unsplash.com" title="unsplash.com" target="_blank">unsplash.com</a>, and use in the header:
 					</p>
 
 					<ul>
@@ -151,11 +148,18 @@
 
 		data: function() {
 			return {
+				emailAddress: "",
+				emailText: ""
 			}
 		},
 		created: function() {
 		},
 		mounted: function() {
+			const s1 = "fotos";
+			const s2 = "@";
+			const s3 = "outtolaunch.com";
+			this.emailAddress = "mailto:" + s1 + s2 + s3;
+			this.emailText = "feedback is welcome";
 		},
 		methods: {
 		},
@@ -181,12 +185,12 @@
 	.welcome p {
 		margin-bottom: 1.8rem;
 		font-size: 1.11rem;
-		text-shadow: 6px 6px 6px #000;
+		// text-shadow: 6px 6px 6px #000;
 	}
 
 	.welcome ul {
-		margin: auto 18% auto 9%;
-		margin-left: 3rem;
+		margin: 3rem 4.5rem 4.5rem 4.5rem;
+		// margin-left: 3rem;
 		list-style: disc outside;
 	}
 	.welcome li {
@@ -216,7 +220,8 @@
 
 
 	.collections-link {
-		margin-top: 3rem;
+		display: inline-block;
+		margin: 1.5rem 0 4.5rem 0;
 		border-bottom: 1px dotted royalblue;
 	}
 	.collections-link:hover {
