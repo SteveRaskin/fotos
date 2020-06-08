@@ -35,6 +35,7 @@
 
 					<!-- OTL pofo -->
 					<a
+						v-else
 						href="#"
 						:title="obj.metadata"
 						@click="updateObjId(obj.id)"
@@ -87,6 +88,7 @@
 
 						<!-- OTL pofo -->
 						<img
+							v-else
 							ref="activeImage"
 							class="active-image"
 							:src="require(`@/assets/img/collections/${imgDir}/${collection[objID].imgFile}`)"
@@ -161,6 +163,7 @@
 			this.abstract = this.collectionObj.abstract;
 			// this.collectionGroup = this.collectionObj.path; // family site √
 			this.collectionObj.path.length ? this.collectionGroup = this.collectionObj.path : this.collectionGroup = "";
+
 			this.imgDir = this.collectionObj.data;
 
 			this.$store.state.selectedCollection ? this.collection = this.$store.state.selectedCollection : this.collection = JSON.parse(localStorage.getItem("selectedCollection")); // string-to-object to get values

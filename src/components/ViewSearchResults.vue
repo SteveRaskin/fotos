@@ -22,8 +22,8 @@
 				</ul>
 			</div>
 
-			<div class="pos-search-results">
-				<h4 class="results-count" v-if="searchResults.length">
+			<div class="pos-search-results" v-else>
+				<h4 class="results-count">
 					{{ searchResults.length }} result<span v-if="searchResults.length > 1">s</span> matching search "{{ titleCase(searchTerm) }}":
 				</h4>
 
